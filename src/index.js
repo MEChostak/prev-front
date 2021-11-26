@@ -37,7 +37,11 @@ app.get('/user', function(req, res) {
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/user/edit', function(req, res) {
-	res.render('pages/userEdit');
+	res.render('pages/userEdit', { action : 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/user/create', function(req, res) {
+	res.render('pages/userEdit', { action : 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 
@@ -47,7 +51,11 @@ app.get('/organization', function(req, res) {
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/organization/edit', function(req, res) {
-	res.render('pages/organizationEdit');
+	res.render('pages/organizationEdit', { action : 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/organization/create', function(req, res) {
+	res.render('pages/organizationEdit', { action : 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 
@@ -57,7 +65,7 @@ app.get('/table', function(req, res) {
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/table/edit', function(req, res) {
-	res.render('pages/tableEdit');
+	res.render('pages/tableEdit', { action : 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 
@@ -67,7 +75,36 @@ app.get('/calc', function(req, res) {
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/calc/create', function(req, res) {
-	res.render('pages/calcEdit');
+	res.render('pages/calcEdit', { action : 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
+
+// Plan *********
+app.get('/plan', function(req, res) {
+	res.render('pages/planList');
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/plan/edit', function(req, res) {
+	res.render('pages/planEdit', { action : 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/plan/create', function(req, res) {
+	res.render('pages/planEdit', { action : 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
+
+
+// Profile *********
+app.get('/profile', function(req, res) {
+	res.render('pages/profileList');
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/profile/edit', function(req, res) {
+	res.render('pages/profileEdit', { action : 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/profile/create', function(req, res) {
+	res.render('pages/profileEdit', { action : 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 

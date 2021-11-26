@@ -14,13 +14,13 @@
 
                         <div class="row wrapper border-bottom white-bg page-heading">
                             <div class="col-lg-10">
-                                <h2>Users</h2>
+                                <h2>Profile</h2>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
                                         <a href="/dashboard">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a>Users</a>
+                                        <a>Profile</a>
                                     </li>
                                     <li class="breadcrumb-item active">
                                         <strong>List</strong>
@@ -28,18 +28,20 @@
                                 </ol>
                             </div>
                             <div class="col-lg-2" style="margin-top: 30px;">
-                                <a href="/user/create" class="btn btn-lg btn-primary float-right">Add User</a>
+                                <a href="/profile/create" class="btn btn-lg btn-primary float-right">Add Profile</a>
                             </div>
                         </div>
 
                         <div class="wrapper wrapper-content animated fadeInRight ecommerce">
                             <div class="ibox-content m-b-sm border-bottom">
                                 <div class="row">
+                                    <input type="hidden" name="input_id" id="input_id" class="form-control">
+                                    <input type="hidden" name="input_organizationId" id="input_organizationId" class="form-control">
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label" for="select_profile">Profile</label>
+                                            <label class="col-form-label" for="product_name">Profile</label>
                                             <select id="select_profile" name="select_profile" value=""
-                                                placeholder="Profile" class="select4 form-control">
+                                                placeholder="Profile" class="form-control">
                                                 <option value="">-- Select --</option>
                                                 <option value="1">Administrator</option>
                                                 <option value="2">Organization Owner</option>
@@ -49,17 +51,25 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label" for="select_organization">Organization</label>
+                                            <label class="col-form-label" for="product_name">Organization</label>
                                             <select id="select_organization" name="select_organization"
-                                                class="select2 form-control">
+                                                class="select2_demo_3 form-control">
                                                 <option></option>
+                                                <option value="Bahamas">Bahamas</option>
+                                                <option value="Bahrain">Bahrain</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="Barbados">Barbados</option>
+                                                <option value="Belarus">Belarus</option>
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Belize">Belize</option>
+                                                <option value="Benin">Benin</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label" for="input_status">Status</label>
-                                            <select name="input_status" id="input_status" class="select3 form-control">
+                                            <label class="col-form-label" for="status">Status</label>
+                                            <select name="input_status" id="inputstatus" class="select3 form-control">
                                                 <option value="" selected>Select</option>
                                                 <option value="1">Enabled</option>
                                                 <option value="0">Disabled</option>
@@ -68,28 +78,32 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label class="col-form-label" for="input_name">Name</label>
-                                            <input type="text" id="input_name" name="input_name" value="" placeholder=""
+                                            <label class="col-form-label" for="quantity">Name</label>
+                                            <input type="text" id="quantity" name="quantity" value="" placeholder=""
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label class="col-form-label" for="input_email">E-mail</label>
-                                            <input type="text" id="input_email" name="input_email" value="" placeholder=""
+                                            <label class="col-form-label" for="quantity">E-mail</label>
+                                            <input type="text" id="quantity" name="quantity" value="" placeholder=""
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <button class="btn btn-default btnClearUser">Clear</button>
-                                            <button class="btn btn-primary btnSearchUser">
-                                                <i class="fa fa-search"></i> Search
                                             </button>
+                                            <button class="btn btn-default" id="bt_limpar_filtro">Clear</button>
+                                            <button class="btn btn-primary" id="bt_filtrar" type="submit">
+                                                <i class="fa fa-search"></i> Search
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <br>
+                            <br>
 
                             <div class="row">
                                 <div class="col-lg-12">
@@ -100,6 +114,7 @@
                                                 data-page-size="15">
                                                 <thead>
                                                     <tr>
+
                                                         <th data-toggle="true">Name</th>
                                                         <th data-hide="phone">E-mail</th>
                                                         <th data-hide="phone">Profile</th>
@@ -109,7 +124,7 @@
 
                                                     </tr>
                                                 </thead>
-                                                <tbody id="table_user">
+                                                <tbody id="table_profile">
                                                     <tr>
                                                         <td>
                                                             Felipe Martins
@@ -121,7 +136,7 @@
                                                             Admin
                                                         </td>
                                                         <td>
-                                                            Cálculo Previdénciario
+                                                            Smart Aviation
                                                         </td>
                                                         <td>
                                                             <span class="label label-primary">Enabled</span>
@@ -174,8 +189,8 @@
             <!-- Select2 -->
             <script src="js/plugins/select2/select2.full.min.js"></script>
 
-            <!-- User list -->
-            <script src="js/pages/userList.js"></script>
+            <!-- Profile List -->
+            <script src="/js/pages/profileList.js"></script>
 
             <!-- Page-Level Scripts -->
             <script>
@@ -183,27 +198,16 @@
 
                     $('.footable').footable();
 
-                    $(".select2").select2({
-                        theme: 'bootstrap4',
-                        placeholder: "Select a organization",
-                        allowClear: true
-                    });
-
                     $(".select3").select2({
                         theme: 'bootstrap4',
                         placeholder: "Select a status",
                         allowClear: true
                     });
 
-                    $(".select4").select2({
-                        theme: 'bootstrap4',
-                        placeholder: "Select a profile",
-                        allowClear: true
-                    });
-
                 });
 
             </script>
+
     </body>
 
     </html>

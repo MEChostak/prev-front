@@ -1,0 +1,147 @@
+<!--Header-->
+<%- include('../partials/header') %>
+
+    <body>
+
+
+        <div id="wrapper">
+
+            <!--Nav Bar-->
+            <%- include('../partials/navbar') %>
+
+                <div id="page-wrapper" class="gray-bg">
+
+                    <!--Nav Bar White-->
+                    <%- include('../partials/navbar-white') %>
+
+                        <div class="row wrapper border-bottom white-bg page-heading">
+                            <div class="col-lg-10">
+                                <h2>Users</h2>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/dashboard">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="/user">Users</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        <strong>
+                                            <%= action %>
+                                        </strong>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="wrapper wrapper-content animated fadeInRight">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox ">
+                                        <div class="ibox-title">
+                                            <h5>User <small></small></h5>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <form name="form_user" id="form_user">
+                                                <input type="hidden" name="input_id" id="input_id"
+                                                                    class="form-control">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Organization</label>
+                                                            <div class="col-sm-4">
+                                                                <select id="select_organization"
+                                                                    name="select_organization" class="form-control">
+                                                                    <option>Select</option>
+                                                                    <option value="2">Magson Chost</option>
+                                                                </select>
+                                                            </div>
+                                                            <label class="col-sm-2 col-form-label">Profile</label>
+                                                            <div class="col-sm-4">
+                                                                <select id="select_profile" name="select_profile"
+                                                                    class="form-control">
+                                                                    <option value="">Select</option>
+                                                                    <option value="1">Admin</option>
+                                                                    <option value="2">Owner</option>
+                                                                    <option value="3">Crew</option>
+                                                                    <option value="4">Passenger</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Name</label>
+                                                            <div class="col-sm-4">
+                                                                <input type="text" name="input_name" id="input_name"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <label class="col-sm-2 col-form-label">Email</label>
+                                                            <div class="col-sm-4">
+                                                                <input type="text" name="input_email" id="input_email"
+                                                                    class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Password</label>
+                                                            <div class="col-sm-4">
+                                                                <input type="text" name="input_password"
+                                                                    id="input_password" class="form-control">
+                                                            </div>
+                                                            <label class="col-sm-2 col-form-label">Confirm</label>
+                                                            <div class="col-sm-4">
+                                                                <input type="text" name="input_confirm_password"
+                                                                    id="input_confirm_password" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Status</label>
+                                                            <div class="col-sm-4">
+                                                                <input id="" type="checkbox" checked
+                                                                    data-toggle="toggle" data-on="Active"
+                                                                    data-off="Inactive" data-onstyle="success"
+                                                                    data-offstyle="danger" data-size="xs">
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <div class="col-sm-4">
+                                                                <a class="btn btn-white btn-sm btnCancel"
+                                                                    href="/user">Back</a>
+                                                                <button class="btn btn-primary btn-sm btnSave">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--Footer-->
+                        <%- include('../partials/footer') %>
+
+                </div>
+
+
+        </div>
+
+        <!--Right sidebar-->
+        <%- include('../partials/mainly-scripts') %>
+
+            <!-- FooTable -->
+            <script src="/js/plugins/footable/footable.all.min.js"></script>
+
+            <!-- Select2 -->
+            <script src="/js/plugins/select2/select2.full.min.js"></script>
+
+            <!-- User Edit -->
+            <script src="/js/pages/userEdit.js"></script>
+    </body>
+
+    </html>

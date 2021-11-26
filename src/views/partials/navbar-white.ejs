@@ -10,11 +10,11 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <span class="m-r-sm text-muted welcome-message">Bem-vindo, <strong>Felipe Martins</strong></span>
+                <span class="m-r-sm text-muted welcome-message">Welcome, <strong id="nameNav">Felipe Martins</strong></span>
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
                 </a>
                 <ul class="dropdown-menu dropdown-alerts">
                     <li>
@@ -57,8 +57,8 @@
 
 
             <li>
-                <a href="login.html">
-                    <i class="fa fa-sign-out"></i> Sair
+                <a href="/">
+                    <i class="fa fa-sign-out"></i> Log out
                 </a>
             </li>
             <li>
@@ -70,3 +70,6 @@
 
     </nav>
 </div>
+<script>
+    document.getElementById('nameNav').innerText = localStorage.getItem('name')
+</script>
