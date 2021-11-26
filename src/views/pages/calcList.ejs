@@ -1,0 +1,197 @@
+<!--Header-->
+<%- include('../partials/header') %>
+
+<body>
+    <div id="wrapper">
+    
+        <!--Nav Bar-->
+        <%- include('../partials/navbar') %>
+
+        <div id="page-wrapper" class="gray-bg">
+            
+            <!--Nav Bar White-->
+            <%- include('../partials/navbar-white') %>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Cálculos</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a>Cálculos</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Listar</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" style="margin-top: 30px;">
+                    <a href="/calc/create" class="btn btn-lg btn-primary float-right">Novo Cálculo</a>
+                </div>
+            </div>
+
+            <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+                <div class="ibox-content m-b-sm border-bottom">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group" id="data_4">
+                                <label class="col-form-label">Data início</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group" id="data_5">
+                                <label class="col-form-label">Data fim</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="product_name">Espécie de Benefício</label>
+                                <select id="select_organization" name="select_organization" class="form-control">
+                                    <option>-- Selecione--</option>
+                                    <option>Aposentadoria por tempo de serviço</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="quantity">Contribuinte</label>
+                                <input type="text" id="quantity" name="quantity" value="" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <button class="btn btn-primary" id="bt_filtrar" type="submit">
+                                    <i class="fa fa-search"></i> Pesquisar
+                                </button>
+                                <button class="btn btn-default" id="bt_limpar_filtro">Limpar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox">
+                            <div class="ibox-content">
+
+                                <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                                    <thead>
+                                        <tr>
+                                            <th data-toggle="true">Data</th>
+                                            <th >Contribuinte</th>
+                                            <th data-hide="phone">Tipo de Benefício</th>
+                                            <th>Status</th>
+                                            <th class="text-right" data-sort-ignore="true">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                01/012021
+                                            </td>
+                                            <td>
+                                                Felipe Martins
+                                            </td>
+                                            <td>
+                                                Aposentadoria por tempo de serviço
+                                            </td>
+                                            <td>
+                                                <span class="label label-primary">Concluído</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</button>
+                                                    <button class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button class="btn-white btn btn-xs"><i class="far fa-trash-alt"></i> Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                01/012021
+                                            </td>
+                                            <td>
+                                                Dalva Regina
+                                            </td>
+                                            <td>
+                                                Aposentadoria por tempo de serviço
+                                            </td>
+                                            <td>
+                                                <span class="label label-warning">Pendente</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</button>
+                                                    <button class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button class="btn-white btn btn-xs"><i class="far fa-trash-alt"></i> Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6">
+                                                <ul class="pagination float-right"></ul>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--Footer-->
+            <%- include('../partials/footer') %>
+            
+        </div>
+        
+        <!--Right sidebar-->
+        <%- include('../partials/right-sidebar') %>
+
+    </div>
+
+    <!--Right sidebar-->
+    <%- include('../partials/mainly-scripts') %>
+
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Select2 -->
+    <script src="js/plugins/select2/select2.full.min.js"></script>
+
+    <!-- Datepicker -->
+    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function() {
+
+            $('.footable').footable();
+
+            $('#data_4 .input-group.date, #data_5 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+        });
+
+    </script>
+</body>
+</html>

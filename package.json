@@ -1,0 +1,41 @@
+{
+  "name": "smart-frontweb",
+  "version": "1.0.0",
+  "description": "Web application front",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Orange Trade",
+  "license": "ISC",
+  "dependencies": {
+    "bootbox": "^4.4.0",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.25.3",
+    "natives": "^1.1.6",
+    "nodemon": "^2.0.7",
+    "request": "^2.83.0",
+    "sendgrid": "^5.2.3",
+    "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-cdn-absolute-path": "0.0.6",
+    "gulp-clean": "^0.4.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}

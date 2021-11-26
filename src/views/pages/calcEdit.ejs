@@ -1,0 +1,157 @@
+<!--Header-->
+<%- include('../partials/header') %>
+
+<body>
+    <div id="wrapper">
+    
+        <!--Nav Bar-->
+        <%- include('../partials/navbar') %>
+
+        <div id="page-wrapper" class="gray-bg">
+            
+            <!--Nav Bar White-->
+            <%- include('../partials/navbar-white') %>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Cálculos</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a>Cálculos</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Novo</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox">
+                            <div class="ibox-content">
+
+                                <div id="wizard">
+                                    <h1>Tipo de Cálculo</h1>
+                                    <div class="step-content">
+                                        <div class="text-center m-t-md">
+                                            <h2>Ops...</h2>
+                                            <p>
+                                                There was an error!
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <h1>Upload do CNIS</h1>
+                                    <div class="step-content">
+                                        <div class="text-center m-t-md">
+                                            <h2>Ops...</h2>
+                                            <p>
+                                                There was an error!
+                                            </p>
+                                        </div>
+                                    </div>
+        
+                                    <h1>Dados do Contribuinte</h1>
+                                    <div class="step-content">
+                                        <div class="text-center m-t-md">
+                                            <h2>Ops...</h2>
+                                            <p>
+                                                There was an error!
+                                            </p>
+                                        </div>
+                                    </div>
+        
+                                    <h1>Tempo de contribuição</h1>
+                                    <div class="step-content">
+                                        <div class="text-center m-t-md">
+                                            <h2>Ops...</h2>
+                                            <p>
+                                                There was an error!
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <h1>Salários</h1>
+                                    <div class="step-content">
+                                        <div class="text-center m-t-md">
+                                            <h2>Ops...</h2>
+                                            <p>
+                                                There was an error!
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <h1>Resumo</h1>
+                                    <div class="step-content">
+                                        <div class="text-center m-t-md">
+                                            <h2>Ops...</h2>
+                                            <p>
+                                                There was an error!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--Footer-->
+            <%- include('../partials/footer') %>
+            
+        </div>
+        
+        <!--Right sidebar-->
+        <%- include('../partials/right-sidebar') %>
+
+    </div>
+
+    <!--Right sidebar-->
+    <%- include('../partials/mainly-scripts') %>
+
+    <!-- FooTable -->
+    <script src="/js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Select2 -->
+    <script src="/js/plugins/select2/select2.full.min.js"></script>
+
+    <!-- Datepicker -->
+    <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <!-- Steps -->
+    <script src="/js/plugins/steps/jquery.steps.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function() {
+
+            $('.footable').footable();
+
+            $("#wizard").steps({
+                stepsOrientation: "vertical",
+                enableAllSteps: true,
+                labels: {
+					cancel: "Voltar",
+					current: "Step atual:",
+					pagination: "Paginação'",
+					finish: "Finalizar",
+					next: "Próximo",
+					previous: "Anterior",
+					loading: "Carregando..."
+				}
+            });
+
+        });
+
+    </script>
+</body>
+</html>

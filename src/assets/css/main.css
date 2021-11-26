@@ -1,0 +1,12 @@
+.wizard.vertical > .steps {
+    width: 23%;
+}
+
+.wizard.vertical > .content {
+    width: 72%;
+}
+
+.wizard > .steps a, .wizard > .steps a:hover, .wizard > .steps a {
+    background-color: #dedede;
+    color: #2F4050;
+}
