@@ -1,115 +1,105 @@
-var profileEdit = (function () {
+var organizationEdit = (function () {
     'use strict';
     //var initialPage = 1;
     //var recordsPerPage = 10;
 
     const BASE_URL = "http://localhost:3600";
 
-    var profileEdit = {};
+    var organizationEdit = {};
 
-    profileEdit.init = function () {
+    organizationEdit.init = function () {
         //global.listProject($('#ddlProject'));
 
-        profileEdit.auth();
-        profileEdit.validateForm();
+        organizationEdit.auth();
+        organizationEdit.validateForm();
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get('id')
 
-        if (id !== null) profileEdit.get(id);
+        if (id !== null) organizationEdit.get(id);
     };
 
-    profileEdit.initEvents = function () {
-        $('.btnSave').on('click', profileEdit.save);
-        $('.btnCancel').on('click', profileEdit.cancel);
+    organizationEdit.initEvents = function () {
+        $('.btnSave').on('click', organizationEdit.save);
+        $('.btnCancel').on('click', organizationEdit.cancel);
 
-        profileEdit.setMask();
+        organizationEdit.setMask();
     };
 
-    profileEdit.setMask = function () {
-
+    organizationEdit.setMask = function () {
+        // $('#input_description').mask('00/00/0000');
     }
 
-    profileEdit.validateForm = function () {
-        $('#form_person').validate({
+    organizationEdit.validateForm = function () {
+        $('#form_organization').validate({
             rules: {
                 input_name: {
                     required: true,
                     minlength: 2
                 },
-                input_birthDate: {
-                    required: true,
-                },
                 input_description: {
                     required: true,
+                    minlength: 2
                 },
-                input_phone: {
-                    required: true,
-                },
-                input_email: {
-                    required: true,
-                },
+                paymentStatus: {
+                    required: true
+                }
             },
             messages: {
                 input_name: {
-                    required: 'Informe um nome válido!',
-                    minlength: 'Informe um nome com mais de dois caracteres'
-                },
-                input_birthDate: {
-                    required: 'Informe uma data válida',
+                    required: "Informe um nome válido!",
+                    minlength: "Informe um nome com mais de dois caractares"
                 },
                 input_description: {
-                    required: 'Informe uma descrição',
+                    required: "Informe uma descrição válida!",
+                    minlength: "Informe uma descrição com mais de dois caractares"
                 },
-                input_phone: {
-                    required: 'Informe um telefone',
-                },
-                input_email: {
-                    required: 'Informe um Email valido',
-                }
+                paymentStatus: {
+                    required: "Selecione uma opção!",
+                    
+                }, 
             }
         });
     };
 
-    profileEdit.setFormData = function (data) {
+    organizationEdit.setFormData = function (data) {
+        console.log(data)
         $('#input_id').val(data.id);
         $('#input_name').val(data.name);
-        $('#input_birthDate').val(data.birthDate);
-        $('#input_description').val(data.description);
-        $('#input_phone').val(data.phone);
-        $('#input_mail').val(data.mail);
+        $('#input_descripition').val(data.description);
+        $('#paymentStatus').val(data.paymentStatus);
+        $('#planId').val(data.planId);
     }
 
-    profileEdit.getFormData = function () {
+    organizationEdit.getFormData = function () {
         let data = {
             id: $('#input_id').val(),
             name: $('#input_name').val(),
-            birthDate: $('#input_birthDate').val(),
             description: $('#input_description').val(),
-            phone: $('#input_phone').val(),
-            mail: $('#input_mail').val(),
+            paymentStatus: $('#paymentStatus').val(),
+            planId: $('#paymentStatus').val(),
         }
 
         return data;
     }
 
-    profileEdit.auth = function () {
+    organizationEdit.auth = function () {
         var token = localStorage.getItem('token')
 
         token == null ? location.href = '/' : null
     }
 
-    profileEdit.logout = function () {
+    organizationEdit.logout = function () {
         localStorage.clear()
         location.href = '/'
     }
 
-    profileEdit.cancel = function () {
-        location.href = '/profile';
+    organizationEdit.cancel = function () {
+        location.href = '/organization';
     }
 
-    profileEdit.get = function (id) {
+    organizationEdit.get = function (id) {
         $.ajax({
             beforeSend: function (xhrObj) {
                 xhrObj.setRequestHeader('Content-Type', 'application/json');
@@ -117,24 +107,24 @@ var profileEdit = (function () {
                 xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
             },
             method: 'GET',
-            url: `${BASE_URL}/person/show/${id}`,
+            url: `${BASE_URL}/organization/show/${id}`,
             contentType: 'application/json'
         })
             .done(function (data) {
-                profileEdit.setFormData(data.data);
+                organizationEdit.setFormData(data.data);
             })
             .fail(function (err) {
                 console.log(err);
-                toastr.error("Falha ao carregar usuário!");
+                toastr.error("Falha ao carregar organização!");
                 return false;
             });
     }
 
-    profileEdit.save = function (event) {
+    organizationEdit.save = function (event) {
         event.preventDefault();
 
-        if ($('#form_profile').valid()) {
-            let data = profileEdit.getFormData();
+        if ($('#form_organization').valid()) {
+            let data = organizationEdit.getFormData();
             console.log(data);
             $.ajax({
                 beforeSend: function (xhrObj) {
@@ -143,27 +133,26 @@ var profileEdit = (function () {
                     xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
                 },
                 method: (data.id !== '' ? 'PATCH' : 'POST'),
-                url: (data.id !== '' ? `${BASE_URL}/person/update/${data.id}` : `${BASE_URL}/person/store`),
+                url: (data.id !== '' ? `${BASE_URL}/organization/update/${data.id}` : `${BASE_URL}/organization/store`),
                 data: JSON.stringify(data),
                 contentType: 'application/json'
             })
                 .done(function (data) {
                     console.log(data);
-                    profileEdit.cancel()
-                    $('#input_id').val(data.data.id);
-                    toastr.success('Perfil salvo com sucesso!');
-
+                    toastr.success('Organização salva com sucesso');
+                    organizationEdit.cancel()
                 })
                 .fail(function (err) {
                     console.log(err);
-                    toastr.error('Falha ao salvar perfil!');
+                    toastr.error('Falha ao salvar organização');
+                    console.log(err);
                     return false;
                 });
         }
     };
 
-    return profileEdit;
+    return organizationEdit;
 })();
 
-profileEdit.init();
-profileEdit.initEvents();
+organizationEdit.init();
+organizationEdit.initEvents();

@@ -32,7 +32,7 @@ var login = (function () {
     login.validateForm = function () {
         $('#formLogin').validate({
             rules: {
-                email: {
+                mail: {
                     required: true,
                 },
                 password: {
@@ -40,7 +40,7 @@ var login = (function () {
                 }
             },
             messages: {
-                email: {
+                mail: {
                     required: "Entre com um email!",
                 },
                 password: {
@@ -52,7 +52,7 @@ var login = (function () {
 
     login.getFormData = function () {
         let data = {
-            email: $('#input_email').val(),
+            mail: $('#input_email').val(),
             password: $('#input_password').val()
         }
 

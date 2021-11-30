@@ -92,9 +92,9 @@ var planList = (function () {
                     rows += '    <td>';
                     rows +=         data.elements[i].price;
                     rows += '    </td>';
-                    rows += '    <td>';
+                    /* rows += '    <td>';
                     rows +=         data.elements[i].organization.name;
-                    rows += '    </td>';
+                    rows += '    </td>'; */
                     rows += '    <td>';
                     rows += '        <span class="label label-primary">Enabled</span>';
                     rows += '    </td>';

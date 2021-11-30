@@ -25,9 +25,30 @@ app.get('/', function(req, res) {
 	res.render('pages/login');
 });
 
+// Forgot Password
+app.get('/forgotpassword', function(req, res) {
+	res.render('pages/forgotPassword');
+});
+
+// Reset Password
+app.get('/resetpassword', function(req, res) {
+	res.render('pages/resetPassword');
+});
+
+// Register
+app.get('/register', function(req, res) {
+	res.render('pages/register');
+});
+
 // Dashboard *********
 app.get('/dashboard', function(req, res) {
 	res.render('pages/dashboard');
+    //baseController.renderPage(req, res, 'dashboard');
+});
+
+// Billing *********
+app.get('/billing', function(req, res) {
+	res.render('pages/billing');
     //baseController.renderPage(req, res, 'dashboard');
 });
 
@@ -61,7 +82,7 @@ app.get('/organization/create', function(req, res) {
 
 // Tables *********
 app.get('/table', function(req, res) {
-	res.render('pages/tableList');
+	res.render('pages/tableList', { action : 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/table/edit', function(req, res) {
@@ -81,7 +102,7 @@ app.get('/calc/create', function(req, res) {
 
 // Plan *********
 app.get('/plan', function(req, res) {
-	res.render('pages/planList');
+	res.render('pages/planList', { action : 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/plan/edit', function(req, res) {

@@ -37,24 +37,11 @@ var profileList = (function () {
     profileList.getFormData = function () {
         let data = {
             id: $('#input_id').val(),
-            fullName: $('#input_fullName').val(),
-            nationality: $('#input_nationality').val(),
+            name: $('#input_name').val(),
             birthDate: $('#input_birthDate').val(),
-            weight: $('#input_weight').val(),
-            unit: $('#input_unit').val(),
-            comment: $('#input_comment').val(),
+            description: $('#input_description').val(),
             phone: $('#input_phone').val(),
             mail: $('#input_mail').val(),
-            emergencyPhone: $('#input_emergencyPhone').val(),
-            address: $('#input_address').val(),
-            city: $('#input_city').val(),
-            country: $('#input_country').val(),
-            isCrewMember: $('#input_isCrewMember').val(),
-            isPassenger: $('#input_isPassenger').val(),
-            organizationId: $('#select_organization').val(),
-            url: $('#input_url').val(),
-            typePerson: $('#input_typePerson').val(),
-            // document: []
         }
 
         return data;
@@ -99,16 +86,13 @@ var profileList = (function () {
                 for (let i=0; i<data.info.totalRows; i++) {
                     rows += '<tr>';
                     rows += '   <td>';
-                    rows +=         data.elements[i].fullName;
+                    rows +=         data.elements[i].name;
                     rows += '    </td>';
                     rows += '    <td>';
                     rows +=         data.elements[i].mail;
                     rows += '    </td>';
                     rows += '    <td>';
-                    rows +=         data.elements[i].typePerson;
-                    rows += '    </td>';
-                    rows += '    <td>';
-                    rows +=         data.elements[i].organization.name;
+                    rows +=         data.elements[i].phone;
                     rows += '    </td>';
                     rows += '    <td>';
                     rows += '        <span class="label label-primary">Enabled</span>';

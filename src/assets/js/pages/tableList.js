@@ -1,78 +1,75 @@
-var organizationList = (function () {
+var tableList = (function () {
     'use strict';
     //var initialPage = 1;
     //var recordsPerPage = 10;
 
     const BASE_URL = "http://localhost:3600";
 
-    var organizationList = {};
+    var tableList = {};
 
-    organizationList.init = function () {
+    tableList.init = function () {
         //global.listProject($('#ddlProject'));
 
-        organizationList.auth();
-        organizationList.validateForm();
+        tableList.auth();
+        tableList.validateForm();
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
 
-        organizationList.get();
+        tableList.get();
     };
 
-    organizationList.initEvents = function () {
-        $('.btnSearchOrg').on('click', organizationList.search);
-        $('.btnClearOrg').on('click', organizationList.clearForm);
+    tableList.initEvents = function () {
+        $('.btnSearchUser').on('click', tableList.search);
+        $('.btnClearUser').on('click', tableList.clearForm);
 
-        organizationList.setMask();
+        tableList.setMask();
     };
 
-    organizationList.setMask = function () {
+    tableList.setMask = function () {
 
     }
 
-    organizationList.validateForm = function () {
+    tableList.validateForm = function () {
 
     };
 
-    organizationList.getFormData = function () {
+    tableList.getFormData = function () {
         let data = {
-            id: $('#input_id').val(),
-            name: $('#input_name').val(),
-            description: $('#input_description').val(),
-            paymentStatus: $('#input_paymentStatus').val(),
-            planId: $('#paymentStatus').val(),
+            mouth: $('#input_mouth').val(),
+            year: $('#input_year').val(),
+            value: $('#input_value').val(),
         }
 
         return data;
     }
 
-    organizationList.auth = function () {
+    tableList.auth = function () {
         var token = localStorage.getItem('token')
 
         token == null ? location.href = '/' : null
     }
 
-    organizationList.logout = function () {
+    tableList.logout = function () {
         localStorage.clear()
         location.href = '/'
     }
 
-    organizationList.cancel = function () {
-
-        location.href = '/organization';
+    tableList.cancel = function () {
+        location.href = '/table';
     }
 
-    organizationList.clearForm = function () {
-        document.getElementById('input_name').value = '';
-        document.getElementById('input_paymentStatus').value = '';
-        
-        organizationList.get();
+    tableList.clearForm = function () {
+        document.getElementById('input_mouth').value = '';
+        document.getElementById('input_year').value = '';
+        document.getElementById('input_value').value = '';
+        tableList.get();
     }
 
-    organizationList.get = function () {
+    tableList.get = function () {
 
-        let data = organizationList.getFormData();
-        //console.log(data);
+        let data = tableList.getFormData();
+        // console.log("chamei", data);
         $.ajax({
             beforeSend: function (xhrObj) {
                 xhrObj.setRequestHeader('Content-Type', 'application/json');
@@ -80,7 +77,7 @@ var organizationList = (function () {
                 xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
             },
             method: 'POST',
-            url: `${BASE_URL}/organization/list/1`,
+            url: `${BASE_URL}/table/list/1`,
             data: JSON.stringify(data),
             contentType: 'application/json'
         })
@@ -88,48 +85,45 @@ var organizationList = (function () {
                 console.log(data);
 
                 let rows = "";
-                for (let i = 0; i < data.info.totalRows; i++) {
+                for (let i = 0; i < data.elements.length; i++) {
                     rows += '<tr>';
                     rows += '   <td>';
-                    rows += data.elements[i].name;
+                    rows += data.elements[i].mouth;
                     rows += '    </td>';
                     rows += '    <td>';
-                    rows += data.elements[i].description;
+                    rows += data.elements[i].year;
                     rows += '    </td>';
                     rows += '    <td>';
-                    rows += data.elements[i].paymentStatus;
+                    rows += data.elements[i].value;
                     rows += '    </td>';
-                    // rows += '    <td>';
-                    // rows += data.elements[i].planId;
-                    // rows += '    </td>';
                     rows += '    <td>';
                     rows += '        <span class="label label-primary">Enabled</span>';
                     rows += '    </td>';
                     rows += '    <td class="text-right">';
                     rows += '        <div class="btn-group">';
-                    rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
-                    rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</a>`;
+                    rows += `            <a href="/table/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
+                    rows += '            <a href="/table/edit?id=' + data.elements[i].id + '" class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</a>';
                     rows += '            <a data-id="' + data.elements[i].id + '"class="btn-white btn btn-xs btnRemove"><i class="far fa-trash-alt"></i> Delete</a>';
                     rows += '        </div>';
                     rows += '    </td>';
                     rows += '</tr>';
                 }
 
-                $('#table_organization').html(rows);
+                $('#table_table').html(rows);
 
-                $('.btnRemove').on('click', organizationList.remove);
+                $('.btnRemove').on('click', tableList.remove);
             })
             .fail(function (err) {
                 //console.log(err);
-                toastr.error('Falha ao listar as organizações!');
+                toastr.error('Falha ao listar tabelas!');
                 return false;
             });
-    };
+    }
 
-    organizationList.search = function () {
+    tableList.search = function () {
 
-        let data = organizationList.getFormData();
-        //console.log(data);
+        let data = tableList.getFormData();
+        // console.log("chamei", data);
         $.ajax({
             beforeSend: function (xhrObj) {
                 xhrObj.setRequestHeader('Content-Type', 'application/json');
@@ -137,7 +131,7 @@ var organizationList = (function () {
                 xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
             },
             method: 'POST',
-            url: `${BASE_URL}/organization/list/1`,
+            url: `${BASE_URL}/table/list/1`,
             data: JSON.stringify(data),
             contentType: 'application/json'
         })
@@ -145,47 +139,44 @@ var organizationList = (function () {
                 console.log(data);
 
                 let rows = "";
-                for (let i = 0; i < data.info.totalRows; i++) {
+                for (let i = 0; i < data.elements.length; i++) {
                     rows += '<tr>';
                     rows += '   <td>';
-                    rows += data.elements[i].name;
+                    rows += data.elements[i].mouth;
                     rows += '    </td>';
                     rows += '    <td>';
-                    rows += data.elements[i].description;
+                    rows += data.elements[i].year;
                     rows += '    </td>';
                     rows += '    <td>';
-                    rows += data.elements[i].paymentStatus;
+                    rows += data.elements[i].value;
                     rows += '    </td>';
-                    // rows += '    <td>';
-                    // rows += data.elements[i].planId;
-                    // rows += '    </td>';
                     rows += '    <td>';
                     rows += '        <span class="label label-primary">Enabled</span>';
                     rows += '    </td>';
                     rows += '    <td class="text-right">';
                     rows += '        <div class="btn-group">';
-                    rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
-                    rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</a>`;
+                    rows += `            <a href="/table/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
+                    rows += '            <a href="/table/edit?id=' + data.elements[i].id + '" class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</a>';
                     rows += '            <a data-id="' + data.elements[i].id + '"class="btn-white btn btn-xs btnRemove"><i class="far fa-trash-alt"></i> Delete</a>';
                     rows += '        </div>';
                     rows += '    </td>';
                     rows += '</tr>';
                 }
 
-                $('#table_organization').html(rows);
+                $('#table_table').html(rows);
 
-                $('.btnRemove').on('click', organizationList.remove);
+                $('.btnRemove').on('click', tableList.remove);
             })
             .fail(function (err) {
                 //console.log(err);
-                toastr.error('Falha ao listar as organizações!');
+                toastr.error('Falha ao listar tabela!');
                 return false;
             });
-    };
+    }
 
-    organizationList.remove = function () {
+    tableList.remove = function () {
         var id = $(this).attr('data-id');
-
+        console.log(id)
         $.ajax({
             beforeSend: function (xhrObj) {
                 xhrObj.setRequestHeader('Content-Type', 'application/json');
@@ -193,22 +184,19 @@ var organizationList = (function () {
                 xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
             },
             method: 'DELETE',
-            url: `${BASE_URL}/organization/delete/${id}`,
-            data: JSON.stringify({id}),
+            url: `${BASE_URL}/table/delete/${id}`,
+            // data: JSON.stringify({ id }),
             contentType: 'application/json'
-        })
-            .done(function (data) {
-                toastr.success('Organização deletado!')
-                organizationList.search();
-            })
-            .fail(function (err) {
-                toastr.error('Falha ao deletar Organização!');
-                return false;
-            });
-    };
-
-    return organizationList;
+        }).done(function (data) {
+            toastr.success('Tabela deletada!')
+            tableList.search()
+        }).fail(function (err) {
+            toastr.error('Falha ao deletar Tabela!');
+            return false;
+        });
+    }
+    return tableList;
 })();
 
-organizationList.init();
-organizationList.initEvents();
+tableList.init();
+tableList.initEvents();
