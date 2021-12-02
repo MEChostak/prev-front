@@ -96,7 +96,7 @@ var userEdit = (function () {
         $('#input_name').val(data.name);
         $('#input_email').val(data.mail);
         $('#organization_select').val(data.organizationId);
-        $('#select_profile').val(data.ṕrofileId);
+        $('#select_person').val(data.ṕersonId);
     }
 
     userEdit.getFormData = function () {
@@ -106,7 +106,7 @@ var userEdit = (function () {
             mail: $('#input_email').val(),
             password: $('#input_password').val(),
             organizationId: $('#organization_select').val(),
-            profileId: $('#select_profile').val(),
+            personId: $('#select_person').val(),
         }
 
         return data;
