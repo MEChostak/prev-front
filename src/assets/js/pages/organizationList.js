@@ -1,4 +1,4 @@
-var organizationList = (function () {
+var organizationList = (function() {
     'use strict';
     //var initialPage = 1;
     //var recordsPerPage = 10;
@@ -7,7 +7,7 @@ var organizationList = (function () {
 
     var organizationList = {};
 
-    organizationList.init = function () {
+    organizationList.init = function() {
         //global.listProject($('#ddlProject'));
 
         organizationList.auth();
@@ -19,22 +19,22 @@ var organizationList = (function () {
         organizationList.get();
     };
 
-    organizationList.initEvents = function () {
+    organizationList.initEvents = function() {
         $('.btnSearchOrg').on('click', organizationList.search);
         $('.btnClearOrg').on('click', organizationList.clearForm);
 
         organizationList.setMask();
     };
 
-    organizationList.setMask = function () {
+    organizationList.setMask = function() {
 
     }
 
-    organizationList.validateForm = function () {
+    organizationList.validateForm = function() {
 
     };
 
-    organizationList.getFormData = function () {
+    organizationList.getFormData = function() {
         let data = {
             id: $('#input_id').val(),
             name: $('#input_name').val(),
@@ -46,45 +46,45 @@ var organizationList = (function () {
         return data;
     }
 
-    organizationList.auth = function () {
+    organizationList.auth = function() {
         var token = localStorage.getItem('token')
 
         token == null ? location.href = '/' : null
     }
 
-    organizationList.logout = function () {
+    organizationList.logout = function() {
         localStorage.clear()
         location.href = '/'
     }
 
-    organizationList.cancel = function () {
+    organizationList.cancel = function() {
 
         location.href = '/organization';
     }
 
-    organizationList.clearForm = function () {
+    organizationList.clearForm = function() {
         document.getElementById('input_name').value = '';
         document.getElementById('input_paymentStatus').value = '';
-        
+
         organizationList.get();
     }
 
-    organizationList.get = function () {
+    organizationList.get = function() {
 
         let data = organizationList.getFormData();
         //console.log(data);
         $.ajax({
-            beforeSend: function (xhrObj) {
-                xhrObj.setRequestHeader('Content-Type', 'application/json');
-                xhrObj.setRequestHeader('Accept', 'application/json');
-                xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-            },
-            method: 'POST',
-            url: `${BASE_URL}/organization/list/1`,
-            data: JSON.stringify(data),
-            contentType: 'application/json'
-        })
-            .done(function (data) {
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('Content-Type', 'application/json');
+                    xhrObj.setRequestHeader('Accept', 'application/json');
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'POST',
+                url: `${BASE_URL}/organization/list/1`,
+                data: JSON.stringify(data),
+                contentType: 'application/json'
+            })
+            .done(function(data) {
                 console.log(data);
 
                 let rows = "";
@@ -107,7 +107,7 @@ var organizationList = (function () {
                     rows += '    </td>';
                     rows += '    <td class="text-right">';
                     rows += '        <div class="btn-group">';
-                    rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
+                    // rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
                     rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</a>`;
                     rows += '            <a data-id="' + data.elements[i].id + '"class="btn-white btn btn-xs btnRemove"><i class="far fa-trash-alt"></i> Delete</a>';
                     rows += '        </div>';
@@ -119,29 +119,29 @@ var organizationList = (function () {
 
                 $('.btnRemove').on('click', organizationList.remove);
             })
-            .fail(function (err) {
+            .fail(function(err) {
                 //console.log(err);
                 toastr.error('Falha ao listar as organizações!');
                 return false;
             });
     };
 
-    organizationList.search = function () {
+    organizationList.search = function() {
 
         let data = organizationList.getFormData();
         //console.log(data);
         $.ajax({
-            beforeSend: function (xhrObj) {
-                xhrObj.setRequestHeader('Content-Type', 'application/json');
-                xhrObj.setRequestHeader('Accept', 'application/json');
-                xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-            },
-            method: 'POST',
-            url: `${BASE_URL}/organization/list/1`,
-            data: JSON.stringify(data),
-            contentType: 'application/json'
-        })
-            .done(function (data) {
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('Content-Type', 'application/json');
+                    xhrObj.setRequestHeader('Accept', 'application/json');
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'POST',
+                url: `${BASE_URL}/organization/list/1`,
+                data: JSON.stringify(data),
+                contentType: 'application/json'
+            })
+            .done(function(data) {
                 console.log(data);
 
                 let rows = "";
@@ -164,7 +164,7 @@ var organizationList = (function () {
                     rows += '    </td>';
                     rows += '    <td class="text-right">';
                     rows += '        <div class="btn-group">';
-                    rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
+                    // rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</a>`;
                     rows += `            <a href="/organization/edit?id=${data.elements[i].id}" class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</a>`;
                     rows += '            <a data-id="' + data.elements[i].id + '"class="btn-white btn btn-xs btnRemove"><i class="far fa-trash-alt"></i> Delete</a>';
                     rows += '        </div>';
@@ -176,32 +176,32 @@ var organizationList = (function () {
 
                 $('.btnRemove').on('click', organizationList.remove);
             })
-            .fail(function (err) {
+            .fail(function(err) {
                 //console.log(err);
                 toastr.error('Falha ao listar as organizações!');
                 return false;
             });
     };
 
-    organizationList.remove = function () {
+    organizationList.remove = function() {
         var id = $(this).attr('data-id');
 
         $.ajax({
-            beforeSend: function (xhrObj) {
-                xhrObj.setRequestHeader('Content-Type', 'application/json');
-                xhrObj.setRequestHeader('Accept', 'application/json');
-                xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-            },
-            method: 'DELETE',
-            url: `${BASE_URL}/organization/delete/${id}`,
-            data: JSON.stringify({id}),
-            contentType: 'application/json'
-        })
-            .done(function (data) {
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('Content-Type', 'application/json');
+                    xhrObj.setRequestHeader('Accept', 'application/json');
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'DELETE',
+                url: `${BASE_URL}/organization/delete/${id}`,
+                data: JSON.stringify({ id }),
+                contentType: 'application/json'
+            })
+            .done(function(data) {
                 toastr.success('Organização deletado!')
                 organizationList.search();
             })
-            .fail(function (err) {
+            .fail(function(err) {
                 toastr.error('Falha ao deletar Organização!');
                 return false;
             });

@@ -1,166 +1,167 @@
 <!--Header-->
 <%- include('../partials/header') %>
 
-<body>
-    <div id="wrapper">
-    
-        <!--Nav Bar-->
-        <%- include('../partials/navbar') %>
+    <body>
+        <div id="wrapper">
 
-        <div id="page-wrapper" class="gray-bg">
-            
-            <!--Nav Bar White-->
-            <%- include('../partials/navbar-white') %>
+            <!--Nav Bar-->
+            <%- include('../partials/navbar') %>
 
-            <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-lg-10">
-                    <h2>Tabelas</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Tabelas</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Listar</strong>
-                        </li>
-                    </ol>
-                </div>
-                <div class="col-lg-2" style="margin-top: 30px;">
-                    <a href="/table/edit" class="btn btn-lg btn-primary float-right">Novo cálculo</a>
-                </div>
-            </div>
+                <div id="page-wrapper" class="gray-bg">
 
-            <div class="wrapper wrapper-content animated fadeInRight ecommerce">
-                <div class="ibox-content m-b-sm border-bottom">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="form-group" id="data_4">
-                                <label class="font-normal">Data início</label>
-                                <div class="input-group date">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                </div>
+                    <!--Nav Bar White-->
+                    <%- include('../partials/navbar-white') %>
+
+                        <div class="row wrapper border-bottom white-bg page-heading">
+                            <div class="col-lg-10">
+                                <h2>Tabelas</h2>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a>Tabelas</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        <strong>Listar</strong>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2" style="margin-top: 30px;">
+                                <a href="/table/edit" class="btn btn-lg btn-primary float-right">Novo cálculo</a>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="form-group" id="data_5">
-                                <label class="font-normal">Data fim</label>
-                                <div class="input-group date">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <button class="btn btn-primary" id="bt_filtrar" type="submit">
+
+                        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+                            <div class="ibox-content m-b-sm border-bottom">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="data_4">
+                                            <label class="font-normal">Data início</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="data_5">
+                                            <label class="font-normal">Data fim</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <button class="btn btn-primary" id="bt_filtrar" type="submit">
                                     <i class="fa fa-search"></i> Pesquisar
                                 </button>
-                                <button class="btn btn-default" id="bt_limpar_filtro">Limpar</button>
+                                            <button class="btn btn-default" id="bt_limpar_filtro">Limpar</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox">
+                                        <div class="ibox-content">
+
+                                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-toggle="true">Mês/ano</th>
+                                                        <th data-hide="phone">Valor</th>
+                                                        <th data-hide="phone">Taxa</th>
+                                                        <!-- <th class="text-right" data-sort-ignore="true">Action</th> -->
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table_table">
+                                                    <tr>
+                                                        <td>
+                                                            Jan/2021
+                                                        </td>
+                                                        <td>
+                                                            6,5%
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group">
+                                                                <button class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</button>
+                                                                <button class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn-white btn btn-xs"><i class="far fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Fev/2021
+                                                        </td>
+                                                        <td>
+                                                            5,5%
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group">
+                                                                <button class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</button>
+                                                                <button class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</button>
+                                                                <button class="btn-white btn btn-xs"><i class="far fa-trash-alt"></i> Delete</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            <ul class="pagination float-right"></ul>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
-                    </div>
+
+                        <!--Footer-->
+                        <%- include('../partials/footer') %>
+
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="ibox">
-                            <div class="ibox-content">
+                <!--Right sidebar-->
+                <%- include('../partials/right-sidebar') %>
 
-                                <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
-                                    <thead>
-                                        <tr>
-                                            <th data-toggle="true">Mês/ano</th>
-                                            <th data-hide="phone">Valor</th>
-                                            <th class="text-right" data-sort-ignore="true">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="table_table">
-                                        <tr>
-                                            <td>
-                                                Jan/2021
-                                            </td>
-                                            <td>
-                                                6,5%
-                                            </td>
-                                            <td class="text-right">
-                                                <div class="btn-group">
-                                                    <button class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</button>
-                                                    <button class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</button>
-                                                    <button class="btn-white btn btn-xs"><i class="far fa-trash-alt"></i> Delete</button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Fev/2021
-                                            </td>
-                                            <td>
-                                                5,5%
-                                            </td>
-                                            <td class="text-right">
-                                                <div class="btn-group">
-                                                    <button class="btn-white btn btn-xs"><i class="fa fa-search"></i> View</button>
-                                                    <button class="btn-white btn btn-xs"><i class="fa fa-edit"></i> Edit</button>
-                                                    <button class="btn-white btn btn-xs"><i class="far fa-trash-alt"></i> Delete</button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="6">
-                                                <ul class="pagination float-right"></ul>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <!--Footer-->
-            <%- include('../partials/footer') %>
-            
         </div>
-        
+
         <!--Right sidebar-->
-        <%- include('../partials/right-sidebar') %>
+        <%- include('../partials/mainly-scripts') %>
 
-    </div>
+            <!-- FooTable -->
+            <script src="js/plugins/footable/footable.all.min.js"></script>
 
-    <!--Right sidebar-->
-    <%- include('../partials/mainly-scripts') %>
+            <!-- Select2 -->
+            <script src="js/plugins/select2/select2.full.min.js"></script>
 
-    <!-- FooTable -->
-    <script src="js/plugins/footable/footable.all.min.js"></script>
+            <!-- Datepicker -->
+            <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-    <!-- Select2 -->
-    <script src="js/plugins/select2/select2.full.min.js"></script>
+            <!-- Table Edit -->
+            <script src="/js/pages/tableList.js"></script>
 
-    <!-- Datepicker -->
-    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+            <!-- Page-Level Scripts -->
+            <script>
+                $(document).ready(function() {
 
-    <!-- Table Edit -->
-    <script src="/js/pages/tableList.js"></script>
+                    $('.footable').footable();
 
-    <!-- Page-Level Scripts -->
-    <script>
-        $(document).ready(function() {
+                    $('#data_4 .input-group.date, #data_5 .input-group.date').datepicker({
+                        todayHighlight: true
+                    });
 
-            $('.footable').footable();
+                });
+            </script>
+    </body>
 
-            $('#data_4 .input-group.date, #data_5 .input-group.date').datepicker({
-                todayHighlight: true
-            });
-
-        });
-
-    </script>
-</body>
-</html>
+    </html>

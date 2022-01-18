@@ -14,6 +14,7 @@
     "bootbox": "^4.4.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^5.0.0",
+    "dropify": "^0.2.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.5.1",

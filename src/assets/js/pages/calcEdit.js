@@ -1,4 +1,4 @@
-var calcEdit = (function () {
+var calcEdit = (function() {
     'use strict';
     //var initialPage = 1;
     //var recordsPerPage = 10;
@@ -7,8 +7,10 @@ var calcEdit = (function () {
 
     var calcEdit = {};
 
-    calcEdit.init = function () {
+    calcEdit.init = function() {
         //global.listProject($('#ddlProject'));
+        $('.dropify').dropify();
+        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
 
         calcEdit.auth();
         calcEdit.validateForm();
@@ -16,24 +18,28 @@ var calcEdit = (function () {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get('id')
-        
+
         if (id !== null) calcEdit.get(id);
 
         calcEdit.organization();
     };
 
-    calcEdit.initEvents = function () {
+    calcEdit.initEvents = function() {
         $('.btnSave').on('click', calcEdit.save);
         $('.btnCancel').on('click', calcEdit.cancel);
 
         calcEdit.setMask();
+
+        $('.dropify').dropify();
+        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+
     };
 
-    calcEdit.setMask = function () {
-      
+    calcEdit.setMask = function() {
+
     }
 
-    calcEdit.validateForm = function () {
+    calcEdit.validateForm = function() {
         $('#form_user').validate({
             rules: {
                 organization_select: {
@@ -45,16 +51,16 @@ var calcEdit = (function () {
                 input_name: {
                     required: true,
                     minlength: 2
-                }, 
+                },
                 input_email: {
                     required: true,
-                    email:true
+                    email: true
 
                 },
                 input_password: {
                     required: true,
                     minlength: 8
-                }, 
+                },
                 input_confirm_password: {
                     required: true
                 },
@@ -85,13 +91,13 @@ var calcEdit = (function () {
                     required: "Informe a confirmação da senha!"
                 },
                 input_status: {
-                    required:"Selecione o status!"
+                    required: "Selecione o status!"
                 }
             }
         });
     };
 
-    calcEdit.setFormData = function (data) {
+    calcEdit.setFormData = function(data) {
         $('#input_id').val(data.id);
         $('#input_name').val(data.name);
         $('#input_email').val(data.mail);
@@ -99,7 +105,7 @@ var calcEdit = (function () {
         $('#select_person').val(data.ṕersonId);
     }
 
-    calcEdit.getFormData = function () {
+    calcEdit.getFormData = function() {
         let data = {
             id: $('#input_id').val(),
             name: $('#input_name').val(),
@@ -111,103 +117,102 @@ var calcEdit = (function () {
 
         return data;
     }
-    
-    calcEdit.auth = function () {
+
+    calcEdit.auth = function() {
         var token = localStorage.getItem('token')
 
         token == null ? location.href = '/' : null
     }
 
-    calcEdit.logout = function () {
+    calcEdit.logout = function() {
         localStorage.clear()
         location.href = '/'
     }
 
-    calcEdit.cancel = function () {
+    calcEdit.cancel = function() {
         location.href = '/user';
     }
 
-    calcEdit.get = function (id) {
+    calcEdit.get = function(id) {
         $.ajax({
-            beforeSend: function (xhrObj) {
-                xhrObj.setRequestHeader('Content-Type', 'application/json');
-                xhrObj.setRequestHeader('Accept', 'application/json');
-                xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-            },
-            method: 'GET',
-            url: `${BASE_URL}/user/show/${id}`,
-            contentType: 'application/json'
-        })
-            .done(function (data) {
-                calcEdit.setFormData(data.data);    
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('Content-Type', 'application/json');
+                    xhrObj.setRequestHeader('Accept', 'application/json');
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'GET',
+                url: `${BASE_URL}/user/show/${id}`,
+                contentType: 'application/json'
             })
-            .fail(function (err) {
+            .done(function(data) {
+                calcEdit.setFormData(data.data);
+            })
+            .fail(function(err) {
                 console.log(err);
                 toastr.error("Falha ao carregar usuário!");
                 return false;
             });
     }
 
-    calcEdit.organization = function () {
+    calcEdit.organization = function() {
 
         $.ajax({
-            beforeSend: function (xhrObj) {
-                xhrObj.setRequestHeader('Content-Type', 'application/json');
-                xhrObj.setRequestHeader('Accept', 'application/json');
-                xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-            },
-            method: 'POST',
-            url: `${BASE_URL}/organization/list/1`,
-            data: JSON.stringify({}),
-            contentType: 'application/json'
-        })
-            .done(function (data) {
-                console.log(data)
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('Content-Type', 'application/json');
+                    xhrObj.setRequestHeader('Accept', 'application/json');
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'POST',
+                url: `${BASE_URL}/organization/list/1`,
+                data: JSON.stringify({}),
+                contentType: 'application/json'
+            })
+            .done(function(data) {
+                // console.log(data)
                 let organizationList = []
                 let selectBox = document.getElementById("organization_select").options
                 for (var i = 0; i < data.elements.length; i++) {
                     organizationList.push(data.elements[i])
                 }
                 organizationList.forEach(option =>
-                    selectBox.add(
-                        new Option(option.name, option.id)
+                        selectBox.add(
+                            new Option(option.name, option.id)
+                        )
                     )
-                )
-                console.log(organizationList)
+                    // console.log(organizationList)
             })
-            .fail(function (err) {
+            .fail(function(err) {
                 //console.log(err);
                 toastr.error('Falha ao listar organização!');
                 return false;
             });
     };
 
-
-    calcEdit.save = function (event) {
+    calcEdit.save = function(event) {
         event.preventDefault();
 
         if ($('#form_user').valid()) {
             let data = calcEdit.getFormData();
             console.log("aqui", data);
             $.ajax({
-                beforeSend: function (xhrObj) {
-                    xhrObj.setRequestHeader('Content-Type', 'application/json');
-                    xhrObj.setRequestHeader('Accept', 'application/json');
-                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-                },
-                method: (data.id !== '' ? 'PATCH' : 'POST'),
-                url: (data.id !== '' ? `${BASE_URL}/user/update/${data.id}` : `${BASE_URL}/user/store`),
-                data: JSON.stringify(data),
-                contentType: 'application/json'
-            })
-                .done(function (data) {
+                    beforeSend: function(xhrObj) {
+                        xhrObj.setRequestHeader('Content-Type', 'application/json');
+                        xhrObj.setRequestHeader('Accept', 'application/json');
+                        xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                    },
+                    method: (data.id !== '' ? 'PATCH' : 'POST'),
+                    url: (data.id !== '' ? `${BASE_URL}/user/update/${data.id}` : `${BASE_URL}/user/store`),
+                    data: JSON.stringify(data),
+                    contentType: 'application/json'
+                })
+                .done(function(data) {
                     console.log(data);
                     calcEdit.cancel()
                     $('#input_id').val(data.data.id);
                     toastr.success('Usuário salvo com sucesso!');
-                    
+
                 })
-                .fail(function (err) {
+                .fail(function(err) {
                     console.log(err);
                     toastr.error('Falha ao salvar usuário!');
                     return false;
