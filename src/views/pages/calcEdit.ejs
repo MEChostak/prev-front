@@ -19,10 +19,10 @@
                                 <h2>Cálculos</h2>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="index.html">Home</a>
+                                        <a href="/dashboard">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a>Cálculos</a>
+                                        <a href="/calc">Cálculos</a>
                                     </li>
                                     <li class="breadcrumb-item active">
                                         <strong>Novo</strong>
@@ -128,11 +128,38 @@
 
                                                     <h1>Upload do CNIS</h1>
                                                     <fieldset>
-                                                        <input type="file" id="planilha" name="planilha" class="dropify">
+                                                        <form class="centerForm" action="" method="get" enctype="multipart/form-data">
+                                                            <h1>Upload<i class="fas fa-cloud-upload-alt"></i></h1>
+                                                            <input type="file" id="planilha" name="planilha" class="btn btn-primary dropify" multiple><br><br>
+                                                            <button type="submit"><i class="far fa-paper-plane"></i> Send File</button>
+                                                        </form>
+                                                        <script>
+                                                            var arquivo = document.getElementById("planilha")
 
+                                                            var fs = require('fs');
+                                                            var PDFParser = require('pdf2json');
+                                                            var pdfCaminho = arquivo;
+                                                            if (fs.existsSync(pdfCaminho)) {
+                                                                var pdfParser = new PDFParser();
+                                                                //Vamos inserir programação aqui depois
+                                                                if (fs.existsSync(pdfCaminho)) {
+                                                                    var pdfParser = new PDFParser();
+                                                                    pdfParser.on("pdfParser_dataError", function(errData) {
+                                                                        console.error(errData.parserError)
+                                                                    });
+                                                                    pdfParser.on("pdfParser_dataReady", function(pdfData) {
+                                                                        console.log(pdfData)
+                                                                    });
+                                                                }
+                                                                pdfParser.loadPDF(pdfCaminho);
+                                                                console.log('Arquivo localizado');
+                                                            } else {
+                                                                console.log('Arquivo não localizado');
+                                                            }
+                                                        </script>
                                                     </fieldset>
 
-                                                    <h1>Dados do Contribuinte</h1>
+                                                    <h1 id="pdf">Dados do Contribuinte</h1>
                                                     <fieldset>
 
                                                     </fieldset>
