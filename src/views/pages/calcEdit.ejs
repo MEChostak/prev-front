@@ -128,40 +128,42 @@
 
                                                     <h1>Upload do CNIS</h1>
                                                     <fieldset>
-                                                        <form class="centerForm" action="" method="get" enctype="multipart/form-data">
-                                                            <h1>Upload<i class="fas fa-cloud-upload-alt"></i></h1>
-                                                            <input type="file" id="planilha" name="planilha" class="btn btn-primary dropify" multiple><br><br>
-                                                            <button type="submit"><i class="far fa-paper-plane"></i> Send File</button>
-                                                        </form>
-                                                        <script>
-                                                            var arquivo = document.getElementById("planilha")
+                                                        <h1>Upload<i class="fas fa-cloud-upload-alt"></i></h1>
+                                                        <input type="file" id="pdf" name="pdf" class="btn btn-primary dropify" multiple><br><br>
+                                                        <button class="btn mt-2 btn-primary btnRegister">Enviar</button>
+                                                        <!-- <button type="submit"><i class="far fa-paper-plane"></i> Send File</button> -->
 
-                                                            var fs = require('fs');
-                                                            var PDFParser = require('pdf2json');
-                                                            var pdfCaminho = arquivo;
-                                                            if (fs.existsSync(pdfCaminho)) {
-                                                                var pdfParser = new PDFParser();
-                                                                //Vamos inserir programação aqui depois
-                                                                if (fs.existsSync(pdfCaminho)) {
-                                                                    var pdfParser = new PDFParser();
-                                                                    pdfParser.on("pdfParser_dataError", function(errData) {
-                                                                        console.error(errData.parserError)
-                                                                    });
-                                                                    pdfParser.on("pdfParser_dataReady", function(pdfData) {
-                                                                        console.log(pdfData)
-                                                                    });
-                                                                }
-                                                                pdfParser.loadPDF(pdfCaminho);
-                                                                console.log('Arquivo localizado');
-                                                            } else {
-                                                                console.log('Arquivo não localizado');
-                                                            }
-                                                        </script>
+
                                                     </fieldset>
 
                                                     <h1 id="pdf">Dados do Contribuinte</h1>
                                                     <fieldset>
+                                                        <div class="col-sm-10">
+                                                            <h1>Dados:</h1>
+                                                            <!-- <script>
+                                                                var arquivo = document.getElementById("planilha")
 
+                                                                var fs = require('fs');
+                                                                var PDFParser = require('pdf2json');
+                                                                var pdfCaminho = arquivo;
+                                                                if (fs.existsSync(pdfCaminho)) {
+                                                                    var pdfParser = new PDFParser();
+                                                                    //Vamos inserir programação aqui depois
+                                                                    if (fs.existsSync(pdfCaminho)) {
+                                                                        var pdfParser = new PDFParser();
+                                                                        pdfParser.on("pdfParser_dataError", function(errData) {
+                                                                            console.error(errData.parserError)
+                                                                        });
+                                                                        pdfParser.on("pdfParser_dataReady", function(pdfData) {
+                                                                            console.log(pdfData)
+                                                                        });
+                                                                    }
+                                                                    pdfParser.loadPDF(pdfCaminho);
+                                                                    console.log('Arquivo localizado');
+                                                                } else {
+                                                                    console.log('Arquivo não localizado');
+                                                                }
+                                                            </script> -->
                                                     </fieldset>
 
                                                     <h1>Tempo de contribuição</h1>
@@ -180,62 +182,65 @@
                                                     </fieldset>
 
 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!--Footer-->
+                            <%- include('../partials/footer') %>
+
                         </div>
 
-                        <!--Footer-->
-                        <%- include('../partials/footer') %>
+                        <!--Right sidebar-->
+                        <%- include('../partials/right-sidebar') %>
 
                 </div>
 
                 <!--Right sidebar-->
-                <%- include('../partials/right-sidebar') %>
+                <%- include('../partials/mainly-scripts') %>
 
-        </div>
+                    <!-- FooTable -->
+                    <script src="/js/plugins/footable/footable.all.min.js"></script>
 
-        <!--Right sidebar-->
-        <%- include('../partials/mainly-scripts') %>
+                    <!-- Select2 -->
+                    <script src="/js/plugins/select2/select2.full.min.js"></script>
 
-            <!-- FooTable -->
-            <script src="/js/plugins/footable/footable.all.min.js"></script>
+                    <!-- Datepicker -->
+                    <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-            <!-- Select2 -->
-            <script src="/js/plugins/select2/select2.full.min.js"></script>
+                    <!-- Steps -->
+                    <script src="/js/plugins/steps/jquery.steps.min.js"></script>
 
-            <!-- Datepicker -->
-            <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+                    <!-- Plan Edit -->
+                    <script src="/js/pages/calcEdit.js"></script>
 
-            <!-- Steps -->
-            <script src="/js/plugins/steps/jquery.steps.min.js"></script>
+                    <!-- Page-Level Scripts -->
+                    <script>
+                        $(document).ready(function() {
 
-            <!-- Page-Level Scripts -->
-            <script>
-                $(document).ready(function() {
+                            $('.footable').footable();
 
-                    $('.footable').footable();
+                            $("#wizard").steps({
+                                bodyTag: "fieldset",
+                                stepsOrientation: "vertical",
+                                enableAllSteps: true,
+                                labels: {
+                                    cancel: "Voltar",
+                                    current: "Step atual:",
+                                    pagination: "Paginação'",
+                                    finish: "Finalizar",
+                                    next: "Próximo",
+                                    previous: "Anterior",
+                                    loading: "Carregando..."
+                                }
+                            });
 
-                    $("#wizard").steps({
-                        bodyTag: "fieldset",
-                        stepsOrientation: "vertical",
-                        enableAllSteps: true,
-                        labels: {
-                            cancel: "Voltar",
-                            current: "Step atual:",
-                            pagination: "Paginação'",
-                            finish: "Finalizar",
-                            next: "Próximo",
-                            previous: "Anterior",
-                            loading: "Carregando..."
-                        }
-                    });
-
-                });
-            </script>
+                        });
+                    </script>
     </body>
 
     </html>

@@ -9,8 +9,8 @@ var calcEdit = (function() {
 
     calcEdit.init = function() {
         //global.listProject($('#ddlProject'));
-        $('.dropify').dropify();
-        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+        // $('.dropify').dropify();
+        // $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
 
         calcEdit.auth();
         calcEdit.validateForm();
@@ -21,21 +21,56 @@ var calcEdit = (function() {
 
         if (id !== null) calcEdit.get(id);
 
-        calcEdit.organization();
+        // calcEdit.organization();
     };
 
     calcEdit.initEvents = function() {
         $('.btnSave').on('click', calcEdit.save);
         $('.btnCancel').on('click', calcEdit.cancel);
+        $('.btnRegister').on('click', calcEdit.register)
 
         calcEdit.setMask();
 
-        $('.dropify').dropify();
-        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+        // $('.dropify').dropify();
+        // $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
 
     };
 
     calcEdit.setMask = function() {
+
+    }
+    calcEdit.register = function() {
+
+        if (!$('#pdf')[0].files[0]) {
+            toastr.error('Selecione um arquivo para upload!')
+            return
+        }
+
+        if (!$('#pdf')[0].files[0].name.includes('.pdf')) {
+            toastr.error('O arquivo deve ser PDF.')
+            return
+        }
+
+
+        $.ajax({
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'POST',
+                url: `${BASE_URL}/pdf/bulk`,
+                data: formData,
+                contentType: false,
+                processData: false
+            })
+            .done(function(data) {
+                toastr.success('Arquivo enviado!');
+            })
+            .fail(function(err) {
+                console.log(err);
+                toastr.error('Falha ao enviar arquivo!');
+                return false;
+            });
+
 
     }
 
@@ -154,39 +189,39 @@ var calcEdit = (function() {
             });
     }
 
-    calcEdit.organization = function() {
+    // calcEdit.organization = function() {
 
-        $.ajax({
-                beforeSend: function(xhrObj) {
-                    xhrObj.setRequestHeader('Content-Type', 'application/json');
-                    xhrObj.setRequestHeader('Accept', 'application/json');
-                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-                },
-                method: 'POST',
-                url: `${BASE_URL}/organization/list/1`,
-                data: JSON.stringify({}),
-                contentType: 'application/json'
-            })
-            .done(function(data) {
-                // console.log(data)
-                let organizationList = []
-                let selectBox = document.getElementById("organization_select").options
-                for (var i = 0; i < data.elements.length; i++) {
-                    organizationList.push(data.elements[i])
-                }
-                organizationList.forEach(option =>
-                        selectBox.add(
-                            new Option(option.name, option.id)
-                        )
-                    )
-                    // console.log(organizationList)
-            })
-            .fail(function(err) {
-                //console.log(err);
-                toastr.error('Falha ao listar organização!');
-                return false;
-            });
-    };
+    //     $.ajax({
+    //             beforeSend: function(xhrObj) {
+    //                 xhrObj.setRequestHeader('Content-Type', 'application/json');
+    //                 xhrObj.setRequestHeader('Accept', 'application/json');
+    //                 xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+    //             },
+    //             method: 'POST',
+    //             url: `${BASE_URL}/organization/list/1`,
+    //             data: JSON.stringify({}),
+    //             contentType: 'application/json'
+    //         })
+    //         .done(function(data) {
+    //             // console.log(data)
+    //             let organizationList = []
+    //             let selectBox = document.getElementById("organization_select").options
+    //             for (var i = 0; i < data.elements.length; i++) {
+    //                 organizationList.push(data.elements[i])
+    //             }
+    //             organizationList.forEach(option =>
+    //                     selectBox.add(
+    //                         new Option(option.name, option.id)
+    //                     )
+    //                 )
+    //                 // console.log(organizationList)
+    //         })
+    //         .fail(function(err) {
+    //             //console.log(err);
+    //             toastr.error('Falha ao listar organização!');
+    //             return false;
+    //         });
+    // };
 
     calcEdit.save = function(event) {
         event.preventDefault();
