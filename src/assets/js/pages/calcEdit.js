@@ -3,14 +3,17 @@ var calcEdit = (function() {
     //var initialPage = 1;
     //var recordsPerPage = 10;
 
+    var calcEdit = {};
+
+
     const BASE_URL = "http://localhost:3600";
 
     var calcEdit = {};
 
     calcEdit.init = function() {
         //global.listProject($('#ddlProject'));
-        // $('.dropify').dropify();
-        // $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+        $('.dropify').dropify();
+        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
 
         calcEdit.auth();
         calcEdit.validateForm();
@@ -31,15 +34,19 @@ var calcEdit = (function() {
 
         calcEdit.setMask();
 
-        // $('.dropify').dropify();
-        // $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+        $('.dropify').dropify();
+        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
 
     };
 
     calcEdit.setMask = function() {
 
     }
-    calcEdit.register = function() {
+    calcEdit.register = function(event) {
+        event.preventDefault();
+
+        console.log("passei aqui")
+
 
         if (!$('#pdf')[0].files[0]) {
             toastr.error('Selecione um arquivo para upload!')
@@ -58,7 +65,7 @@ var calcEdit = (function() {
                 },
                 method: 'POST',
                 url: `${BASE_URL}/pdf/bulk`,
-                data: formData,
+                // data: formData,
                 contentType: false,
                 processData: false
             })

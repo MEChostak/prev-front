@@ -31,172 +31,482 @@
                             </div>
                         </div>
 
-                        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+                        <div class="wrapper wrapper-content animated fadeInRight">
+
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="panel blank-panel">
-                                        <div class="panel-heading">
-                                            <div class="panel-options"></div>
+                                    <div class="ibox ">
+                                        <div class="ibox-title">
+                                            <h5>Airdrome <small></small></h5>
                                         </div>
-                                        <div class="panel-body">
-                                            <div class="col-lg-12">
-                                                <div id="wizard" class="wizard-big">
+                                        <div class="ibox-content">
 
-                                                    <h1>Tipo de Cálculo</h1>
-                                                    <fieldset>
-                                                        <div class="form-group row">
-                                                            <label class="col-sm-2 col-form-label">Qual calculo deseja
-                                                                Fazer?</label>
-                                                            <div class="col-sm-10">
-                                                                <select id="select_type" name="select_type" class="form-control">
-                                                                    <option value="" disabled selected>Selecione um tipo
-                                                                        de cálculo</option>
-                                                                    <option value="1">Cálculo de revisões, valor da
-                                                                        causa ou liquidação de sentença</option>
-                                                                    <option value="2">Cálculo da R.M.I, do tempo de
-                                                                        contribuição e planejamento futuro</option>
-                                                                    <option value="3">Cálculo de tempo de contribuição
-                                                                    </option>
-                                                                    <option value="4">Cálculo do melhor benefício em um
-                                                                        período</option>
-                                                                    <option value="5">Cálculo das contribuições em
-                                                                        atraso</option>
-                                                                </select>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+
+                                                    <!-- NAVIGATION -->
+                                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#typeCalc" role="tab" aria-controls="typeCalc" aria-selected="true">Tipo de Cálculo
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="cnis-tab" data-toggle="tab" href="#cnis" role="tab" aria-controls="cnis" aria-selected="false">Upload do CNIS</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="navaids-tab" data-toggle="tab" href="#navaids" role="tab" aria-controls="navaids" aria-selected="false">Navaids</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="frequencia-tab" data-toggle="tab" href="#frequencia" role="tab" aria-controls="frequencia" aria-selected="false">Frequências</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="informacoes-tab" data-toggle="tab" href="#informacoes" role="tab" aria-controls="informacoes" aria-selected="false">Informações Adicionais</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="imageAircraft-tab" data-toggle="tab" href="#imageAircraft" role="tab" aria-controls="imageAircraft" aria-selected="false">Foto(s) & Vídeo(s)</a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <br>
+                                                    <div class="row tab-content" id="nav-tabContent">
+                                                        <div class="col-12 tab-pane fade show active" id="typeCalc" role="tabpanel">
+                                                            <form name="form_calc" id="form_calc">
+                                                                <!-- Dados -->
+                                                                <div class="card">
+
+                                                                    <div class="card-body">
+                                                                        <div class="form-group row">
+                                                                            <label class="col-sm-2 col-form-label">Qual calculo deseja
+                                                                                Fazer?</label>
+                                                                            <div class="col-sm-10">
+                                                                                <select id="select_type" name="select_type" class="form-control">
+                                                                                    <option value="" disabled selected>Selecione um tipo
+                                                                                        de cálculo</option>
+                                                                                    <option value="1">Cálculo de revisões, valor da
+                                                                                        causa ou liquidação de sentença</option>
+                                                                                    <option value="2">Cálculo da R.M.I, do tempo de
+                                                                                        contribuição e planejamento futuro</option>
+                                                                                    <option value="3">Cálculo de tempo de contribuição
+                                                                                    </option>
+                                                                                    <option value="4">Cálculo do melhor benefício em um
+                                                                                        período</option>
+                                                                                    <option value="5">Cálculo das contribuições em
+                                                                                        atraso</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="hr-line-dashed"></div>
+                                                                        <div class="form-group  row">
+                                                                            <label class="col-sm-2 col-form-label">Qual a especie do
+                                                                                benefício?</label>
+                                                                            <div class="col-sm-10">
+                                                                                <select id="select_type" name="select_type" class="form-control">
+                                                                                    <option value="2" disabled selected>Benefícios
+                                                                                        Programáveis</option>
+                                                                                    <option value="42">Aposentadoria por tempo de
+                                                                                        contribuição ou programada </option>
+                                                                                    <option value="57">Aposentadoria por tempo de
+                                                                                        contribuição ou programada de professor (até
+                                                                                        nivel médio)</option>
+                                                                                    <option value="46">Aposentadoria especial</option>
+                                                                                    <option value="41">Aposentadoria por idade ou
+                                                                                        programada</option>
+                                                                                    <option value="07">Aposentadoria por idade ou
+                                                                                        programada</option>
+                                                                                    <option value="" disabled selected>Benefícios por
+                                                                                        incapacidade</option>
+                                                                                    <option value="31">Auxílio doença previdenciário ou
+                                                                                        incapacidade temporária</option>
+                                                                                    <option value="91">Auxílio doença acidentário ou
+                                                                                        incapacidade temporária</option>
+                                                                                    <option value="32">Invalidez ou incapacidade
+                                                                                        permanente previdenciário</option>
+                                                                                    <option value="92">Invalidez ou incapacidade
+                                                                                        permanente por acidente do trabalho</option>
+                                                                                    <option value="36">Auxílio acidente previdenciário
+                                                                                    </option>
+                                                                                    <option value="94">Auxílio acidente por acidente do
+                                                                                        trabalho</option>
+                                                                                    <option value="80">Salário maternidade</option>
+                                                                                    <option value="" disabled selected>Benefícios quanto
+                                                                                        aos dependentes</option>
+                                                                                    <option value="21">Pensão por morte previdenciária
+                                                                                    </option>
+                                                                                    <option value="93">Pensão por morte por acidente de
+                                                                                        trabalho</option>
+                                                                                    <option value="25">Auxílio reclusão</option>
+                                                                                    <option value="" disabled selected>Benefícios
+                                                                                        assistencias</option>
+                                                                                    <option value="87">Amparo assistencial ao portador
+                                                                                        de deficiência</option>
+                                                                                    <option value="88">Amparo Assistencial ao idoso
+                                                                                    </option>
+                                        
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-2" style="margin-top: 30px;">
+                                                                    <a class="btn btn-white btn-sm btnCancel">Back</a>
+
+                                                                    <button class="btn btn-primary btn-sm btnSave">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+                                                        <!-- cnis -->
+                                                        <div class="col-lg-12 col-md-12 tab-pane fade" id="cnis" role="tabpanel">
+                                                            <form name="form_cnis" id="form_cnis">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+
+                                                                        <input type="file" id="pdf" name="pdf" class="dropify">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-lg-2" style="margin-top: 30px;">
+                                                                    <button class="btn btn-primary btn-sm btnRegister">Importar Cnis</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+                                                        <!-- to do -->
+                                                        <div class="col-lg-12 col-md-12 tab-pane fade" id="navaids" role="tabpanel">
+                                                            <form name="form_navaids" id="form_navaids">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <!-- <div class="form-group row">
+                                                                            <label class="col-sm-2 col-form-label">Tipo</label>
+                                                                            <div class="col-sm-2">
+                                                                                <input type="text" name="input_typeNavaids" id="input_typeNavaids" placeholder="NDB" class="form-control">
+                                                                            </div>
+                                                                            <label class="col-sm-2 col-form-label">Designativo</label>
+                                                                            <div class="col-sm-2">
+                                                                                <input type="text" name="input_designativeNavaids" placeholder="MAE" id="input_designativeNavaids" class="form-control">
+                                                                            </div>
+                                                                            <label class="col-sm-2 col-form-label">Frequência</label>
+                                                                            <div class="col-sm-2">
+                                                                                <input type="text" name="input_frequencyNavaids" id="input_frequencyNavaids" placeholder="395" class="form-control">
+                                                                            </div>
+                                                                        </div> -->
+
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-4">
+                                                                        <button class="btn btn-white btn-sm btnClearNavaids">Limpar</button>
+                                                                        <button class="btn btn-primary btn-sm btnSaveNavaids">Salvar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+                                                        <!-- frequencia-->
+                                                        <div class="col-lg-12 col-md-12 tab-pane fade" id="frequencia" role="tabpanel">
+                                                            <form name="form_frequency" id="form_frequency">
+                                                                <input type="hidden" id="input_frequencyId" name="input_frequencyId">
+                                                                <input type="hidden" id="input_airdromeId" name="input_airdromeId">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div class="form-group row form_frequency">
+                                                                            <label class="col-sm-2 col-form-label">Tipo</label>
+                                                                            <div class="col-sm-1">
+                                                                                <input type="text" name="typeFrequency" id="typeFrequency" placeholder="TWR" class="form-control">
+                                                                            </div>
+                                                                            <label class="col-sm-2 col-form-label">Name</label>
+                                                                            <div class="col-sm-2">
+                                                                                <input type="text" name="nameFrequency" placeholder="Congonhas" id="nameFrequency" class="form-control">
+                                                                            </div>
+                                                                            <label class="col-sm-2 col-form-label">Frequência</label>
+                                                                            <div class="col-sm-1">
+                                                                                <input type="text" name="frequency" id="frequency" placeholder="118.70" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-4">
+                                                                        <button class="btn btn-white btn-sm btnClearFrequency">Limpar</button>
+                                                                        <button class="btn btn-primary btn-sm btnSaveFrequency">Salvar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="ibox">
+                                                                        <div class="ibox-content">
+
+                                                                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                                                                                <thead>
+                                                                                    <tr>
+
+                                                                                        <th data-toggle="true">Tipo
+                                                                                        </th>
+                                                                                        <th data-hide="phone">Nome
+                                                                                        </th>
+                                                                                        <th data-hide="phone">
+                                                                                            Frequência</th>
+
+                                                                                        <th data-hide="phone">Status
+                                                                                        </th>
+                                                                                        <th class="text-right" data-sort-ignore="true">
+                                                                                            Action</th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody id="table_airdromeFrequency">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            TWR
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Congonhas
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            118.70
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="label label-primary">Enabled</span>
+                                                                                        </td>
+                                                                                        <td class="text-right">
+                                                                                            <div class="btn-group">
+                                                                                                <button class="btn-white btn btn-xs"><i
+                                                                                                        class="fa fa-search"></i>
+                                                                                                    View</button>
+                                                                                                <button class="btn-white btn btn-xs"><i
+                                                                                                        class="fa fa-edit"></i>
+                                                                                                    Edit</button>
+                                                                                                <button class="btn-white btn btn-xs"><i
+                                                                                                        class="far fa-trash-alt"></i>
+                                                                                                    Delete</button>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <td colspan="6">
+                                                                                            <ul class="pagination float-right">
+                                                                                            </ul>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tfoot>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="hr-line-dashed"></div>
-                                                        <div class="form-group  row">
-                                                            <label class="col-sm-2 col-form-label">Qual a especio do
-                                                                benefício?</label>
-                                                            <div class="col-sm-10">
-                                                                <select id="select_type" name="select_type" class="form-control">
-                                                                    <option value="2" disabled selected>Benefícios
-                                                                        Programáveis</option>
-                                                                    <option value="42">Aposentadoria por tempo de
-                                                                        contribuição ou programada </option>
-                                                                    <option value="57">Aposentadoria por tempo de
-                                                                        contribuição ou programada de professor (até
-                                                                        nivel médio)</option>
-                                                                    <option value="46">Aposentadoria especial</option>
-                                                                    <option value="41">Aposentadoria por idade ou
-                                                                        programada</option>
-                                                                    <option value="07">Aposentadoria por idade ou
-                                                                        programada</option>
-                                                                    <option value="" disabled selected>Benefícios por
-                                                                        incapacidade</option>
-                                                                    <option value="31">Auxílio doença previdenciário ou
-                                                                        incapacidade temporária</option>
-                                                                    <option value="91">Auxílio doença acidentário ou
-                                                                        incapacidade temporária</option>
-                                                                    <option value="32">Invalidez ou incapacidade
-                                                                        permanente previdenciário</option>
-                                                                    <option value="92">Invalidez ou incapacidade
-                                                                        permanente por acidente do trabalho</option>
-                                                                    <option value="36">Auxílio acidente previdenciário
-                                                                    </option>
-                                                                    <option value="94">Auxílio acidente por acidente do
-                                                                        trabalho</option>
-                                                                    <option value="80">Salário maternidade</option>
-                                                                    <option value="" disabled selected>Benefícios quanto
-                                                                        aos dependentes</option>
-                                                                    <option value="21">Pensão por morte previdenciária
-                                                                    </option>
-                                                                    <option value="93">Pensão por morte por acidente de
-                                                                        trabalho</option>
-                                                                    <option value="25">Auxílio reclusão</option>
-                                                                    <option value="" disabled selected>Benefícios
-                                                                        assistencias</option>
-                                                                    <option value="87">Amparo assistencial ao portador
-                                                                        de deficiência</option>
-                                                                    <option value="88">Amparo Assistencial ao idoso
-                                                                    </option>
 
-                                                                </select>
+                                                        <!-- informações adicionais -->
+                                                        <div class="col-lg-12 tab-pane fade" id="informacoes" role="tabpanel">
+                                                            <form name="form_info" id="form_info">
+                                                                <input type="hidden" id="input_infoId" name="input_infoId">
+                                                                <input type="hidden" id="input_airdromeId" name="input_airdromeId">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div class="row">
+
+                                                                            <label class="col-sm-2 col-form-label">Internacional</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="checkbox" checked data-toggle="toggle" data-on=" " data-off=" " data-onstyle="success" id="input_international" name="input_international" data-offstyle="danger" data-size="xs">
+                                                                            </div>
+                                                                            <label class="col-sm-2 col-form-label">Requer
+                                                                                Slot</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="checkbox" checked data-toggle="toggle" data-on=" " data-off=" " data-onstyle="success" id="input_requireSlot" name="input_requireSlot" data-offstyle="danger" data-size="xs" onchange="console.log()">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="hr-line-dashed"></div>
+                                                                        <div class="row">
+                                                                            <label class="col-sm-2 col-form-label">Requer
+                                                                                autorização de pátio</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="checkbox" checked data-toggle="toggle" data-on="  " data-off="  " data-onstyle="success" id="input_patioAuthorization" name="input_patioAuthorization" data-offstyle="danger" data-size="xs">
+                                                                            </div>
+                                                                            <label class="col-sm-2 col-form-label">Possui
+                                                                                iluminação</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="checkbox" checked data-toggle="toggle" data-on="  " data-off="  " data-onstyle="success" id="input_hasLighting" name="input_hasLighting" data-offstyle="danger" data-size="xs">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="hr-line-dashed"></div>
+
+                                                                        <label class="col-sm-2 col-form-label"></label>
+                                                                        <div class="col-sm-12">
+                                                                            <textarea type="text" rows="4" name="input_comment" id="input_comment" class="form-control" placeholder="Digite aqui seu comentário"></textarea>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-4">
+                                                                        <button class="btn btn-white btn-sm btnClearInfo">Limpar</button>
+                                                                        <button class="btn btn-primary btn-sm btnSaveInfo">Salvar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="ibox">
+                                                                        <div class="ibox-content">
+
+                                                                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                                                                                <thead>
+                                                                                    <tr>
+
+                                                                                        <th data-toggle="true">
+                                                                                            Internacional
+                                                                                        </th>
+                                                                                        <th data-hide="phone">Requer Slot
+                                                                                        </th>
+                                                                                        <th data-hide="phone">
+                                                                                            Autorização de Patio</th>
+                                                                                        <th data-hide="phone">
+                                                                                            Possui iluminação</th>
+                                                                                        <th data-hide="phone">
+                                                                                            Comentário</th>
+                                                                                        <th data-hide="phone">Status
+                                                                                        </th>
+                                                                                        <th class="text-right" data-sort-ignore="true">
+                                                                                            Action</th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody id="table_airdromeAddInfo">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            Não
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Sim
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Sim
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Sim
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Sim
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="label label-primary">Enabled</span>
+                                                                                        </td>
+                                                                                        <td class="text-right">
+                                                                                            <div class="btn-group">
+                                                                                                <button class="btn-white btn btn-xs"><i
+                                                                                                        class="fa fa-search"></i>
+                                                                                                    View</button>
+                                                                                                <button class="btn-white btn btn-xs"><i
+                                                                                                        class="fa fa-edit"></i>
+                                                                                                    Edit</button>
+                                                                                                <button class="btn-white btn btn-xs"><i
+                                                                                                        class="far fa-trash-alt"></i>
+                                                                                                    Delete</button>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <td colspan="6">
+                                                                                            <ul class="pagination float-right">
+                                                                                            </ul>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tfoot>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="hr-line-dashed"></div>
-                                                        <div class="form-group  row">
-                                                            <label class="col-sm-2 col-form-label">Status</label>
-                                                            <div class="col-sm-4">
-                                                                <select class="form-control m-b" name="account">
-                                                                    <option>Ativo</option>
-                                                                    <option>Inativo</option>
-                                                                </select>
-                                                            </div>
-                                                        </div> -->
-                                                    </fieldset>
 
-                                                    <h1>Upload do CNIS</h1>
-                                                    <fieldset>
-                                                        <h1>Upload<i class="fas fa-cloud-upload-alt"></i></h1>
-                                                        <input type="file" id="pdf" name="pdf" class="btn btn-primary dropify" multiple><br><br>
-                                                        <button class="btn mt-2 btn-primary btnRegister">Enviar</button>
-                                                        <!-- <button type="submit"><i class="far fa-paper-plane"></i> Send File</button> -->
+                                                        <!-- Foto Aeronave -->
+                                                        <div class="col-lg-12 tab-pane fade" id="imageAircraft" role="tabpanel">
+                                                            <form name="form_media" id="form_media">
+                                                                <input type="hidden" id="input_mediaId" name="input_mediaId">
+                                                                <input type="hidden" id="input_airdromeId" name="input_airdromeId">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="card">
 
 
-                                                    </fieldset>
+                                                                                    <form class="card" id="formRegister" method="post" enctype="multipart/form-data">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12">
+                                                                                                <div class="avatar avatar-more">
+                                                                                                    </span>
+                                                                                                    <!-- <span>Insira a
+                                                                                                        <strong>
+                                                                                                            Foto(s)/Vídeo(s)
+                                                                                                        </strong>
+                                                                                                    </span> -->
+                                                                                                </div>
+                                                                                                <input type="file" id="photo" class="dropify">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-4">
+                                                                            <button class="btn btn-white btn-sm btnClear_photoAircraft">Limpar</button>
+                                                                            <button class="btn btn-primary btn-sm btnSave_photoAircraft">Salvar</button>
+                                                                        </div>
+                                                                    </div>
 
-                                                    <h1 id="pdf">Dados do Contribuinte</h1>
-                                                    <fieldset>
-                                                        <div class="col-sm-10">
-                                                            <h1>Dados:</h1>
-                                                            <!-- <script>
-                                                                var arquivo = document.getElementById("planilha")
 
-                                                                var fs = require('fs');
-                                                                var PDFParser = require('pdf2json');
-                                                                var pdfCaminho = arquivo;
-                                                                if (fs.existsSync(pdfCaminho)) {
-                                                                    var pdfParser = new PDFParser();
-                                                                    //Vamos inserir programação aqui depois
-                                                                    if (fs.existsSync(pdfCaminho)) {
-                                                                        var pdfParser = new PDFParser();
-                                                                        pdfParser.on("pdfParser_dataError", function(errData) {
-                                                                            console.error(errData.parserError)
-                                                                        });
-                                                                        pdfParser.on("pdfParser_dataReady", function(pdfData) {
-                                                                            console.log(pdfData)
-                                                                        });
-                                                                    }
-                                                                    pdfParser.loadPDF(pdfCaminho);
-                                                                    console.log('Arquivo localizado');
-                                                                } else {
-                                                                    console.log('Arquivo não localizado');
-                                                                }
-                                                            </script> -->
-                                                    </fieldset>
 
-                                                    <h1>Tempo de contribuição</h1>
-                                                    <fieldset>
+                                                                </div>
+                                                            </form>
 
-                                                    </fieldset>
-
-                                                    <h1>Salários</h1>
-                                                    <fieldset>
-
-                                                    </fieldset>
-
-                                                    <h1>Resumo</h1>
-                                                    <fieldset>
-
-                                                    </fieldset>
-
+                                                        </div>
 
                                                     </div>
+
+                                                    <!-- <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <div class="col-sm-4">
+                                                                <button class="btn btn-white btn-sm"
+                                                                    type="submit">Cancel</button>
+                                                                <button class="btn btn-primary btn-sm"
+                                                                    type="submit">Save changes</button>
+                                                            </div>
+                                                        </div> -->
+
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!--Footer-->
-                            <%- include('../partials/footer') %>
-
                         </div>
 
-                        <!--Right sidebar-->
-                        <%- include('../partials/right-sidebar') %>
+                        <!--Footer-->
+                        <%- include('../partials/footer') %>
+
+
 
                 </div>
 
@@ -217,6 +527,8 @@
 
                     <!-- Plan Edit -->
                     <script src="/js/pages/calcEdit.js"></script>
+
+                    <script src="http://jeremyfagis.github.io/dropify/dist/js/dropify.js"></script>
 
                     <!-- Page-Level Scripts -->
                     <script>
