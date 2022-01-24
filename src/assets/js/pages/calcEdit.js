@@ -58,6 +58,12 @@ var calcEdit = (function() {
             return
         }
 
+        var docName = $('#pdf')[0].files[0].name
+
+        var formData = new FormData();
+        formData.append('doc', $('#pdf')[0].files[0], `${docName}`);
+
+
 
         $.ajax({
                 beforeSend: function(xhrObj) {
@@ -65,7 +71,7 @@ var calcEdit = (function() {
                 },
                 method: 'POST',
                 url: `${BASE_URL}/pdf/bulk`,
-                // data: formData,
+                data: formData,
                 contentType: false,
                 processData: false
             })

@@ -54,16 +54,16 @@
                                                             <a class="nav-link" id="cnis-tab" data-toggle="tab" href="#cnis" role="tab" aria-controls="cnis" aria-selected="false">Upload do CNIS</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="navaids-tab" data-toggle="tab" href="#navaids" role="tab" aria-controls="navaids" aria-selected="false">Navaids</a>
+                                                            <a class="nav-link" id="navaids-tab" data-toggle="tab" href="#contribution" role="tab" aria-controls="contribution" aria-selected="false">Tempo de Contribuição</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="frequencia-tab" data-toggle="tab" href="#frequencia" role="tab" aria-controls="frequencia" aria-selected="false">Frequências</a>
+                                                            <a class="nav-link" id="frequencia-tab" data-toggle="tab" href="#frequencia" role="tab" aria-controls="frequencia" aria-selected="false">Salários de Contribuição</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="informacoes-tab" data-toggle="tab" href="#informacoes" role="tab" aria-controls="informacoes" aria-selected="false">Informações Adicionais</a>
+                                                            <a class="nav-link" id="informacoes-tab" data-toggle="tab" href="#informacoes" role="tab" aria-controls="informacoes" aria-selected="false">Regras de Transição</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="imageAircraft-tab" data-toggle="tab" href="#imageAircraft" role="tab" aria-controls="imageAircraft" aria-selected="false">Foto(s) & Vídeo(s)</a>
+                                                            <a class="nav-link" id="imageAircraft-tab" data-toggle="tab" href="#imageAircraft" role="tab" aria-controls="imageAircraft" aria-selected="false">Resulmo do Calculo</a>
                                                         </li>
                                                     </ul>
 
@@ -173,10 +173,48 @@
                                                         </div>
 
                                                         <!-- to do -->
-                                                        <div class="col-lg-12 col-md-12 tab-pane fade" id="navaids" role="tabpanel">
-                                                            <form name="form_navaids" id="form_navaids">
+                                                        <div class="col-lg-12 col-md-12 tab-pane fade" id="contribution" role="tabpanel">
+                                                            <form name="form_contribution" id="form_contribution">
                                                                 <div class="card">
                                                                     <div class="card-body">
+                                                                        <h1>Tempo de Contribuição</h1>
+                                                                        <h4>Como deseja informar o tempo de contribuição?</h4>
+
+                                                                        <input type="radio" name="contribution" value="Informar os Períodos Trabalhados em cada Empresa" /> Informar os Períodos Trabalhados em cada Empresa<br />
+                                                                        <input type="radio" name="contribution" value="Informar Diretamente o Tempo de Contribuição do Requerente" /> Informar Diretamente o Tempo de Contribuição do Requerente
+                                                                        <br>
+                                                                        <br>
+
+                                                                        <table border="1">
+                                                                            <tr>
+                                                                                <td>N°</td>
+                                                                                <td>Data Inicial</td>
+                                                                                <td>Data Final</td>
+                                                                                <td>Tipo</td>
+                                                                                <td>Fator</td>
+                                                                                <td>Empresa</td>
+                                                                                <td>Cargo</td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>034</td>
+                                                                                <td>23/12/2021</td>
+                                                                                <td>25/01/2022</td>
+                                                                                <td>Periodo Normal</td>
+                                                                                <td>1000</td>
+                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>034</td>
+                                                                                <td>23/12/2021</td>
+                                                                                <td>25/01/2022</td>
+                                                                                <td>Periodo Normal</td>
+                                                                                <td>1000</td>
+                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                            </tr>
+                                                                        </table>
                                                                         <!-- <div class="form-group row">
                                                                             <label class="col-sm-2 col-form-label">Tipo</label>
                                                                             <div class="col-sm-2">
