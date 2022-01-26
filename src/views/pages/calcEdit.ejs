@@ -37,7 +37,7 @@
                                 <div class="col-lg-12">
                                     <div class="ibox ">
                                         <div class="ibox-title">
-                                            <h5>Airdrome <small></small></h5>
+                                            <h5>Cálculo <small></small></h5>
                                         </div>
                                         <div class="ibox-content">
 
@@ -50,9 +50,9 @@
                                                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#typeCalc" role="tab" aria-controls="typeCalc" aria-selected="true">Tipo de Cálculo
                                                             </a>
                                                         </li>
-                                                        <li class="nav-item">
+                                                        <!-- <li class="nav-item">
                                                             <a class="nav-link" id="cnis-tab" data-toggle="tab" href="#cnis" role="tab" aria-controls="cnis" aria-selected="false">Upload do CNIS</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="nav-item">
                                                             <a class="nav-link" id="navaids-tab" data-toggle="tab" href="#contribution" role="tab" aria-controls="contribution" aria-selected="false">Tempo de Contribuição</a>
                                                         </li>
@@ -145,13 +145,46 @@
                                                                                 </select>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="hr-line-dashed"></div>
+
+                                                                        <input type="file" id="pdf" name="pdf" class="dropify">
+                                                                    </div>
+                                                                    <div class="col-lg-2" style="margin-top: 15px;">
+                                                                        <button class="btn btn-primary btn-sm btnRegister">Importar Cnis</button>
+                                                                    </div>
+                                                                    <br>
+                                                                    <br>
+                                                                </div>
+
+                                                                <!-- Button trigger modal -->
+                                                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                                    Launch demo modal
+                                                                            </button> -->
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Sucesso</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <strong>Importação concluida com sucesso. <br><br> Atenção!!! Os dados importados precisam ser conferidos, pois dependendo da formatação do arquivo
+                                                                                PDF, pode não ser possível a leitura correta de alguma(s) informação(ões)</strong>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                                                                <button type="button" class="btn btn-primary">Vou Conferir!</button>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-2" style="margin-top: 30px;">
                                                                     <a class="btn btn-white btn-sm btnCancel">Back</a>
 
-                                                                    <button class="btn btn-primary btn-sm btnSave">Save
-                                                                        changes</button>
+                                                                    <!-- <a class="btn btn-primary btn-sm">Próximo</a> -->
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -170,6 +203,7 @@
                                                                     <button class="btn btn-primary btn-sm btnRegister">Importar Cnis</button>
                                                                 </div>
                                                             </form>
+
                                                         </div>
 
                                                         <!-- to do -->

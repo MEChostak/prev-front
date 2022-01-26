@@ -63,8 +63,6 @@ var calcEdit = (function() {
         var formData = new FormData();
         formData.append('doc', $('#pdf')[0].files[0], `${docName}`);
 
-
-
         $.ajax({
                 beforeSend: function(xhrObj) {
                     xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
@@ -76,15 +74,13 @@ var calcEdit = (function() {
                 processData: false
             })
             .done(function(data) {
-                toastr.success('Arquivo enviado!');
+                ($('#myModal').modal('show'))
             })
             .fail(function(err) {
                 console.log(err);
                 toastr.error('Falha ao enviar arquivo!');
                 return false;
             });
-
-
     }
 
     calcEdit.validateForm = function() {
@@ -178,7 +174,7 @@ var calcEdit = (function() {
     }
 
     calcEdit.cancel = function() {
-        location.href = '/user';
+        location.href = '/calc';
     }
 
     calcEdit.get = function(id) {
