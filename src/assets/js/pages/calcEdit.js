@@ -31,6 +31,7 @@ var calcEdit = (function() {
         $('.btnSave').on('click', calcEdit.save);
         $('.btnCancel').on('click', calcEdit.cancel);
         $('.btnRegister').on('click', calcEdit.register)
+        $('.btnNext').on('click', calcEdit.closeModal)
 
         calcEdit.setMask();
 
@@ -42,46 +43,7 @@ var calcEdit = (function() {
     calcEdit.setMask = function() {
 
     }
-    calcEdit.register = function(event) {
-        event.preventDefault();
 
-        console.log("passei aqui")
-
-
-        if (!$('#pdf')[0].files[0]) {
-            toastr.error('Selecione um arquivo para upload!')
-            return
-        }
-
-        if (!$('#pdf')[0].files[0].name.includes('.pdf')) {
-            toastr.error('O arquivo deve ser PDF.')
-            return
-        }
-
-        var docName = $('#pdf')[0].files[0].name
-
-        var formData = new FormData();
-        formData.append('doc', $('#pdf')[0].files[0], `${docName}`);
-
-        $.ajax({
-                beforeSend: function(xhrObj) {
-                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-                },
-                method: 'POST',
-                url: `${BASE_URL}/pdf/bulk`,
-                data: formData,
-                contentType: false,
-                processData: false
-            })
-            .done(function(data) {
-                ($('#myModal').modal('show'))
-            })
-            .fail(function(err) {
-                console.log(err);
-                toastr.error('Falha ao enviar arquivo!');
-                return false;
-            });
-    }
 
     calcEdit.validateForm = function() {
         $('#form_user').validate({
@@ -177,6 +139,12 @@ var calcEdit = (function() {
         location.href = '/calc';
     }
 
+    calcEdit.closeModal = function() {
+        $('#myModal').modal(close)
+        `<a class="nav-link" id="frequencia-tab" data-toggle="tab" href="#frequencia" role="tab" aria-controls="frequencia" aria-selected="false">Salários de Contribuição</a>`
+        // location.href = '/contribution';
+    }
+
     calcEdit.get = function(id) {
         $.ajax({
                 beforeSend: function(xhrObj) {
@@ -198,39 +166,45 @@ var calcEdit = (function() {
             });
     }
 
-    // calcEdit.organization = function() {
+    calcEdit.register = function(event) {
+        event.preventDefault();
 
-    //     $.ajax({
-    //             beforeSend: function(xhrObj) {
-    //                 xhrObj.setRequestHeader('Content-Type', 'application/json');
-    //                 xhrObj.setRequestHeader('Accept', 'application/json');
-    //                 xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
-    //             },
-    //             method: 'POST',
-    //             url: `${BASE_URL}/organization/list/1`,
-    //             data: JSON.stringify({}),
-    //             contentType: 'application/json'
-    //         })
-    //         .done(function(data) {
-    //             // console.log(data)
-    //             let organizationList = []
-    //             let selectBox = document.getElementById("organization_select").options
-    //             for (var i = 0; i < data.elements.length; i++) {
-    //                 organizationList.push(data.elements[i])
-    //             }
-    //             organizationList.forEach(option =>
-    //                     selectBox.add(
-    //                         new Option(option.name, option.id)
-    //                     )
-    //                 )
-    //                 // console.log(organizationList)
-    //         })
-    //         .fail(function(err) {
-    //             //console.log(err);
-    //             toastr.error('Falha ao listar organização!');
-    //             return false;
-    //         });
-    // };
+        if (!$('#pdf')[0].files[0]) {
+            toastr.error('Selecione um arquivo para upload!')
+            return
+        }
+
+        if (!$('#pdf')[0].files[0].name.includes('.pdf')) {
+            toastr.error('O arquivo deve ser PDF.')
+            return
+        }
+
+        var docName = $('#pdf')[0].files[0].name
+
+        var formData = new FormData();
+        formData.append('doc', $('#pdf')[0].files[0], `${docName}`);
+
+        $.ajax({
+                beforeSend: function(xhrObj) {
+                    xhrObj.setRequestHeader('x-access-token', localStorage.getItem('token'));
+                },
+                method: 'POST',
+                url: `${BASE_URL}/pdf/bulk`,
+                data: formData,
+                contentType: false,
+                processData: false
+            })
+            .done(function(data) {
+                (
+                    $('#myModal').modal('show')
+                )
+            })
+            .fail(function(err) {
+                console.log(err);
+                toastr.error('Falha ao enviar arquivo!');
+                return false;
+            });
+    }
 
     calcEdit.save = function(event) {
         event.preventDefault();
