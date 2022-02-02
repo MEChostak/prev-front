@@ -1,25 +1,5 @@
 require('dotenv').config();
-// PDF **********************************************
-// var fs = require('fs');
-// var PDFParser = require('pdf2json');
-// var pdfCaminho = 'exemplo-pdf.pdf';
-// if (fs.existsSync(pdfCaminho)) {
-//     var pdfParser = new PDFParser();
-//     //Vamos inserir programação aqui depois
-//     if (fs.existsSync(pdfCaminho)) {
-//         var pdfParser = new PDFParser();
-//         pdfParser.on("pdfParser_dataError", function(errData) {
-//             console.error(errData.parserError)
-//         });
-//         pdfParser.on("pdfParser_dataReady", function(pdfData) {
-//             console.log(pdfData)
-//         });
-//     }
-//     pdfParser.loadPDF(pdfCaminho);
-//     console.log('Arquivo localizado');
-// } else {
-//     console.log('Arquivo não localizado');
-// }
+
 // Imports **********************************************
 var express = require('express')
 const bodyParser = require('body-parser');
@@ -113,10 +93,18 @@ app.get('/table/edit', function(req, res) {
     res.render('pages/tableEdit', { action: 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
+app.get('/table/create', function(req, res) {
+    res.render('pages/tableEdit', { action: 'Create' });
+    //baseController.renderPage(req, res, 'dashboard');
+});
 
 // Calc *********
 app.get('/calc', function(req, res) {
     res.render('pages/calcList');
+    //baseController.renderPage(req, res, 'dashboard');
+});
+app.get('/calc/edit', function(req, res) {
+    res.render('pages/calcEdit', { action: 'Create' });
     //baseController.renderPage(req, res, 'dashboard');
 });
 app.get('/calc/create', function(req, res) {

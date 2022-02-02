@@ -139,10 +139,10 @@ var calcEdit = (function() {
         location.href = '/calc';
     }
 
-    calcEdit.closeModal = function() {
-        $('#myModal').modal(close)
-        `<a class="nav-link" id="frequencia-tab" data-toggle="tab" href="#frequencia" role="tab" aria-controls="frequencia" aria-selected="false">Salários de Contribuição</a>`
-        // location.href = '/contribution';
+    calcEdit.closeModal = function(event) {
+        event.preventDefault();
+        $('#navaids-tab').tab('show');
+        $('#myModal').modal('hide');
     }
 
     calcEdit.get = function(id) {
