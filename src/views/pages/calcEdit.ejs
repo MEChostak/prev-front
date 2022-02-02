@@ -54,16 +54,16 @@
                                                             <a class="nav-link" id="cnis-tab" data-toggle="tab" href="#cnis" role="tab" aria-controls="cnis" aria-selected="false">Upload do CNIS</a>
                                                         </li> -->
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="navaids-tab" data-toggle="tab" href="#contribution" role="tab" aria-controls="contribution" aria-selected="false">Tempo de Contribuição</a>
+                                                            <a class="nav-link" id="contribution-tab" data-toggle="tab" href="#contribution" role="tab" aria-controls="contribution" aria-selected="false">Tempo de Contribuição</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="frequencia-tab" data-toggle="tab" href="#wage" role="tab" aria-controls="wage" aria-selected="false">Salários de Contribuição</a>
+                                                            <a class="nav-link" id="wage-tab" data-toggle="tab" href="#wage" role="tab" aria-controls="wage" aria-selected="false">Salários de Contribuição</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="informacoes-tab" data-toggle="tab" href="#informacoes" role="tab" aria-controls="informacoes" aria-selected="false">Regras de Transição</a>
+                                                            <a class="nav-link" id="transition-tab" data-toggle="tab" href="#transition" role="tab" aria-controls="transition" aria-selected="false">Regras de Transição</a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" id="imageAircraft-tab" data-toggle="tab" href="#imageAircraft" role="tab" aria-controls="imageAircraft" aria-selected="false">Resulmo do Calculo</a>
+                                                            <a class="nav-link" id="calcResume-tab" data-toggle="tab" href="#calcResume" role="tab" aria-controls="calcResume" aria-selected="false">Resumo do Calculo</a>
                                                         </li>
                                                     </ul>
 
@@ -150,7 +150,7 @@
                                                                         <input type="file" id="pdf" name="pdf" class="dropify">
                                                                     </div>
                                                                     <div class="col-lg-2" style="margin-top: 15px;">
-                                                                        <button class="btn btn-primary btn-sm btnRegister">Importar Cnis</button>
+                                                                        <button class="btn btn-primary fa fa-file-import btn-sm btnRegister"> Importar Cnis</button>
                                                                     </div>
                                                                     <br>
                                                                     <br>
@@ -183,7 +183,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-2" style="margin-top: 30px;">
-                                                                    <a class="btn btn-white btn-sm btnCancel">Back</a>
+                                                                    <a class="btn btn-white fa fa-arrow-left btn-sm btnCancel"> Voltar</a>
 
                                                                     <!-- <a class="btn btn-primary btn-sm">Próximo</a> -->
                                                                 </div>
@@ -222,6 +222,7 @@
                                                                         <div id="table">
                                                                             <table border="1">
                                                                                 <tr>
+
                                                                                     <td>N°</td>
                                                                                     <td>Data Inicial</td>
                                                                                     <td>Data Final</td>
@@ -232,7 +233,59 @@
 
 
                                                                                 </tr>
-                                                                                <tr>
+                                                                                <tr id="1">
+                                                                                    <td><label for="numero">001</label></td>
+                                                                                    <td><label for="dataInicial"> 23/12/2021</label></td>
+                                                                                    <td><label for="dataFinal"></label> 25/01/2022</td>
+                                                                                    <td><label for="tipo"></label> Periodo Normal</td>
+                                                                                    <td>1000</td>
+                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="2">
+                                                                                    <td>035</td>
+                                                                                    <td>23/12/2021</td>
+                                                                                    <td>25/01/2022</td>
+                                                                                    <td>Periodo Normal</td>
+                                                                                    <td>1000</td>
+                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="3">
+                                                                                    <td>036</td>
+                                                                                    <td>23/12/2021</td>
+                                                                                    <td>25/01/2022</td>
+                                                                                    <td>Periodo Normal</td>
+                                                                                    <td>1000</td>
+                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="4">
+                                                                                    <td>037</td>
+                                                                                    <td>23/12/2021</td>
+                                                                                    <td>25/01/2022</td>
+                                                                                    <td>Periodo Normal</td>
+                                                                                    <td>1000</td>
+                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="5">
                                                                                     <td>034</td>
                                                                                     <td>23/12/2021</td>
                                                                                     <td>25/01/2022</td>
@@ -240,8 +293,12 @@
                                                                                     <td>1000</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
                                                                                     <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
+                                                                                <tr id="6">
                                                                                     <td>034</td>
                                                                                     <td>23/12/2021</td>
                                                                                     <td>25/01/2022</td>
@@ -249,8 +306,12 @@
                                                                                     <td>1000</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
                                                                                     <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
+                                                                                <tr id="7">
                                                                                     <td>034</td>
                                                                                     <td>23/12/2021</td>
                                                                                     <td>25/01/2022</td>
@@ -258,8 +319,12 @@
                                                                                     <td>1000</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
                                                                                     <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
+                                                                                <tr id="8">
                                                                                     <td>034</td>
                                                                                     <td>23/12/2021</td>
                                                                                     <td>25/01/2022</td>
@@ -267,8 +332,12 @@
                                                                                     <td>1000</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
                                                                                     <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
+                                                                                <tr id="9">
                                                                                     <td>034</td>
                                                                                     <td>23/12/2021</td>
                                                                                     <td>25/01/2022</td>
@@ -276,58 +345,18 @@
                                                                                     <td>1000</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
                                                                                     <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
-                                                                                    <td>034</td>
-                                                                                    <td>23/12/2021</td>
-                                                                                    <td>25/01/2022</td>
-                                                                                    <td>Periodo Normal</td>
-                                                                                    <td>1000</td>
-                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
-                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>034</td>
-                                                                                    <td>23/12/2021</td>
-                                                                                    <td>25/01/2022</td>
-                                                                                    <td>Periodo Normal</td>
-                                                                                    <td>1000</td>
-                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
-                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>034</td>
-                                                                                    <td>23/12/2021</td>
-                                                                                    <td>25/01/2022</td>
-                                                                                    <td>Periodo Normal</td>
-                                                                                    <td>1000</td>
-                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
-                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>034</td>
-                                                                                    <td>23/12/2021</td>
-                                                                                    <td>25/01/2022</td>
-                                                                                    <td>Periodo Normal</td>
-                                                                                    <td>1000</td>
-                                                                                    <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
-                                                                                    <td>PROMOTOR DE JUSTIÇA</td>
-                                                                                </tr>
-                                                                                <style>
-                                                                                    #table {
-                                                                                        max-width: 100%;
-                                                                                        height: auto;
-                                                                                        overflow: scroll;
-                                                                                    }
-                                                                                </style>
                                                                             </table>
                                                                             <br>
                                                                             <div>
                                                                                 <input type="checkbox" id="scales" name="scales">
                                                                                 <label for="scales">Não projetar o tempo de contribuição para o cálculo futuro</label>
                                                                             </div>
-                                                                            <button class="btn btn-primary fa fa-trash"> Excluir</button>
-                                                                            <button class="btn btn-white fa fa-edit"> Editar</button>
+
                                                                         </div>
                                                                         <br>
                                                                     </div>
@@ -337,7 +366,7 @@
                                                                 <body id="body">
                                                                     <div class="row" id="cards">
 
-                                                                        <div class="card green" id="cardGreen">
+                                                                        <div class="card green" id="cardGreen1">
                                                                             <div id="h">
                                                                                 <h3>Tempo de Contribuição</h3>
                                                                                 <h4>28 anos, 5 meses e 12 dias</h4>
@@ -345,192 +374,43 @@
 
 
                                                                             <div id="myProgress">
-                                                                                <div id="myBarGreen">Faltam 1 ano, 6 meses e 18 dias</div>
+                                                                                <div id="myBarGreen1">Faltam 1 ano, 6 meses e 18 dias</div>
 
-                                                                                <script>
-                                                                                    var i = 0;
-
-                                                                                    function move() {
-                                                                                        if (i == 0) {
-                                                                                            i = 1;
-                                                                                            var elem = document.getElementById("myBar");
-                                                                                            var width = 10;
-                                                                                            var id = setInterval(frame, 10);
-
-                                                                                            function frame() {
-                                                                                                if (width >= 100) {
-                                                                                                    clearInterval(id);
-                                                                                                    i = 0;
-                                                                                                } else {
-                                                                                                    width++;
-                                                                                                    elem.style.width = width + "%";
-                                                                                                    elem.innerHTML = width + "%";
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                </script>
                                                                                 <h3 id="h">Necessario: 30 anos</h3>
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="card red" id="cardRed">
+                                                                        <div class="card red" id="cardRed1">
                                                                             <div id="h">
                                                                                 <h3>Carência</h3>
                                                                                 <h4>345 contribuições</h4>
                                                                             </div>
 
                                                                             <div id="myProgress">
-                                                                                <div id="myBarRed">Atingido</div>
+                                                                                <div id="myBarRed1">Atingido</div>
 
-                                                                                <script>
-                                                                                    var i = 0;
 
-                                                                                    function move() {
-                                                                                        if (i == 0) {
-                                                                                            i = 1;
-                                                                                            var elem = document.getElementById("myBar");
-                                                                                            var width = 10;
-                                                                                            var id = setInterval(frame, 10);
-
-                                                                                            function frame() {
-                                                                                                if (width >= 100) {
-                                                                                                    clearInterval(id);
-                                                                                                    i = 0;
-                                                                                                } else {
-                                                                                                    width++;
-                                                                                                    elem.style.width = width + "%";
-                                                                                                    elem.innerHTML = width + "%";
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                </script>
                                                                                 <h3 id="h">Necessario: 180 contribuições</h3>
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="card blue" id="cardBlue">
+                                                                        <div class="card blue" id="cardBlue1">
                                                                             <div id="h">
                                                                                 <h3>Pontos</h3>
                                                                                 <h4>86 pontos</h4>
                                                                             </div>
 
                                                                             <div id="myProgress">
-                                                                                <div id="myBarBlue">Faltam dois pontos</div>
-                                                                                <script>
-                                                                                    var i = 0;
+                                                                                <div id="myBarBlue1">Faltam dois pontos</div>
 
-                                                                                    function move() {
-                                                                                        if (i == 0) {
-                                                                                            i = 1;
-                                                                                            var elem = document.getElementById("myBar");
-                                                                                            var width = 10;
-                                                                                            var id = setInterval(frame, 10);
-
-                                                                                            function frame() {
-                                                                                                if (width >= 100) {
-                                                                                                    clearInterval(id);
-                                                                                                    i = 0;
-                                                                                                } else {
-                                                                                                    width++;
-                                                                                                    elem.style.width = width + "%";
-                                                                                                    elem.innerHTML = width + "%";
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                </script>
                                                                                 <h3 id="h">Necessario 88 pontos</h3>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </body>
-                                                                <style>
-                                                                    #cardGreen {
-                                                                        position: relative;
-                                                                        left: -5px;
-                                                                        border-radius: 5px;
-                                                                        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-                                                                        padding: 30px;
-                                                                        margin: 20px;
-                                                                        width: 300px;
-                                                                    }
-                                                                    
-                                                                    #cardRed {
-                                                                        position: relative;
-                                                                        left: 26px;
-                                                                        border-radius: 5px;
-                                                                        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-                                                                        padding: 30px;
-                                                                        margin: 20px;
-                                                                        width: 300px;
-                                                                    }
-                                                                    
-                                                                    #cardBlue {
-                                                                        position: relative;
-                                                                        left: 55px;
-                                                                        border-radius: 5px;
-                                                                        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-                                                                        padding: 30px;
-                                                                        margin: 20px;
-                                                                        width: 300px;
-                                                                    }
-                                                                    
-                                                                    #myBarGreen {
-                                                                        width: 90%;
-                                                                        height: 30px;
-                                                                        background-color: #c70505;
-                                                                        text-align: center;
-                                                                        position: relative;
-                                                                        border-radius: 10px;
-                                                                        /* To center it horizontally (if you want) */
-                                                                        line-height: 30px;
-                                                                        /* To center it vertically */
-                                                                        color: rgb(255, 255, 255);
-                                                                    }
-                                                                    
-                                                                    #myBarRed {
-                                                                        width: 100%;
-                                                                        height: 30px;
-                                                                        background-color: #08eb14;
-                                                                        text-align: center;
-                                                                        position: relative;
-                                                                        border-radius: 10px;
-                                                                        /* To center it horizontally (if you want) */
-                                                                        line-height: 30px;
-                                                                        /* To center it vertically */
-                                                                        color: rgb(255, 255, 255);
-                                                                    }
-                                                                    
-                                                                    #myBarBlue {
-                                                                        width: 99%;
-                                                                        height: 30px;
-                                                                        background-color: #c70505;
-                                                                        text-align: center;
-                                                                        position: relative;
-                                                                        border-radius: 10px;
-                                                                        /* To center it horizontally (if you want) */
-                                                                        line-height: 30px;
-                                                                        /* To center it vertically */
-                                                                        color: rgb(255, 255, 255);
-                                                                    }
-                                                                    
-                                                                    #cards {
-                                                                        text-align: center
-                                                                    }
-                                                                    
-                                                                    #h {
-                                                                        text-align: center;
-                                                                    }
-                                                                </style>
-
-                                                                <!-- <div class="card">
-                                                                    <div class="card-body">
-                                                                        <h1>aaaaaaaaa</h1>
-                                                                    </div>
-                                                                </div> -->
                                                                 <br>
+                                                                <button class="btn btn-white btn-sm btnClearInfo"> Voltar</button>
+                                                                <a class="btn btn-primary btn-sm btnProx">Proximo</a>
 
                                                             </form>
                                                         </div>
@@ -557,54 +437,89 @@
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
 
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>01/1992</td>
                                                                                     <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
                                                                                     <td>R$ 33.957,96</td>
+                                                                                    <td>
+                                                                                        <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                        <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                    </td>
                                                                                 </tr>
 
                                                                             </table>
                                                                             <br>
                                                                             <div>
-                                                                                <button class="btn btn-primary fa fa-trash"> Excluir</button>
-                                                                                <button class="btn btn-white fa fa-edit"> Editar</button>
+
                                                                             </div>
                                                                             <br>
                                                                             <div>
@@ -619,203 +534,258 @@
                                                                             <div>
                                                                                 <h6 id="subcrip">* Os salarios de contribuição exibidos na cor vermelha são menores que 1 salário minimo</h6>
                                                                             </div>
-                                                                            <style>
-                                                                                #table {
-                                                                                    max-width: 100%;
-                                                                                    height: auto;
-                                                                                    overflow: scroll;
-                                                                                }
-                                                                                
-                                                                                #subcrip {
-                                                                                    color: red
-                                                                                }
-                                                                            </style>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <br>
+                                                                <button class="btn btn-white btn-sm btnClearInfo"> Voltar</button>
+
+                                                                <a class="btn btn-primary btn-sm btnProxWage">Proximo</a>
                                                             </form>
                                                         </div>
 
 
-                                                        <!-- informações adicionais -->
-                                                        <div class="col-lg-12 tab-pane fade" id="informacoes" role="tabpanel">
-                                                            <form name="form_info" id="form_info">
+                                                        <!-- Regras de transição -->
+
+                                                        <div class="col-lg-12 tab-pane fade" id="transition" role="tabpanel">
+                                                            <form name="form_transition" id="form_transition">
+
+                                                                <div class="card">
+                                                                    <div class="card-body">
+
+                                                                        <h1 id="title1">Tempo Adicional de 100%</h1>
+
+                                                                        <br>
+                                                                        <div class="card">
+                                                                            <div id="timeContri">
+                                                                                <h3>Tempo de Contribuição (Necessário 33 anos, 2 meses e 5 dias):</h3>
+                                                                                <p>Possui 28 anos, 5 meses e 12 dias (Faltam 4 anos, 8 meses e 23 dias)</p>
+                                                                            </div>
+                                                                            <div id="rmiCard">
+                                                                                <h3>Provável RMI:</h3>
+                                                                                <p>R$ 4.470,71</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="card">
+                                                                            <div id="timeContri">
+                                                                                <h3>Idade (Necessario 57 anos na data da Aposentadoria):</h3>
+                                                                                <p>Possui Idade de 57 anos, 10 meses e 14 dias</p>
+                                                                            </div>
+                                                                            <div id="rmiCard">
+                                                                                <h3>Possivel Aposentadoria:</h3>
+                                                                                <p>10/05/2026</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <h1 id="title1">Transição por Idade</h1>
+                                                                        <br>
+                                                                        <div class="card">
+                                                                            <div id="timeContri">
+                                                                                <h3>Tempo de Contribuição (Necessário 15 anos na data da Aposentadoria):</h3>
+                                                                                <p>Possui 28 anos, 5 meses e 12 dias</p>
+                                                                            </div>
+                                                                            <div id="rmiCard">
+                                                                                <h3>Provável RMI:</h3>
+                                                                                <p>R$ 4.470,45</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <br>
+
+                                                                        <div class="card">
+                                                                            <div id="timeContri">
+                                                                                <h3>Idade (Necessario 62 anos na data da Aposentadoria):</h3>
+                                                                                <p>Possui Idade de 57 anos, 10 meses e 14 dias</p>
+                                                                            </div>
+                                                                            <div id="rmiCard">
+                                                                                <h3>Possivel Aposentadoria:</h3>
+                                                                                <p>10/05/2026</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <h1 id="title1">Transição pelo Sistema de Pontos</h1>
+                                                                        <br>
+                                                                        <div class="card">
+                                                                            <div id="timeContri">
+                                                                                <h3>Tempo de Contribuição (Necessário 30 anos na data da Aposentadoria:</h3>
+                                                                                <p>Possui 28 anos, 5 meses e 12 dias (Faltam 1 ano, 6 meses e 18 dias)</p>
+                                                                            </div>
+                                                                            <div id="rmiCard">
+                                                                                <h3>Provável RMI:</h3>
+                                                                                <p>R$ 4.367,75</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="card">
+                                                                            <div id="timeContri">
+                                                                                <h3>Idade (Necessario 30 anos na data da aposentadoria):</h3>
+                                                                                <p>Possui Idade de 57 anos, 10 meses e 14 dias (Carência = 345)</p>
+                                                                            </div>
+                                                                            <div id="rmiCard">
+                                                                                <h3>Possivel Aposentadoria:</h3>
+                                                                                <p>02/10/2025</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <a class="btn btn-white btn-sm btnBackContri">Voltar</a>
+                                                                <a class="btn btn-primary btn-sm btnProxResu">Proximo</a>
+                                                            </form>
+                                                        </div>
+
+
+                                                        <!-- Resumo do Calculo -->
+                                                        <div class="col-lg-12 tab-pane fade" id="calcResume" role="tabpanel">
+                                                            <form name="form_calcResume" id="form_calcResume">
                                                                 <input type="hidden" id="input_infoId" name="input_infoId">
                                                                 <input type="hidden" id="input_airdromeId" name="input_airdromeId">
                                                                 <div class="card">
                                                                     <div class="card-body">
-                                                                        <div class="row">
 
-                                                                            <label class="col-sm-2 col-form-label">Internacional</label>
-                                                                            <div class="col-sm-4">
-                                                                                <input type="checkbox" checked data-toggle="toggle" data-on=" " data-off=" " data-onstyle="success" id="input_international" name="input_international" data-offstyle="danger" data-size="xs">
-                                                                            </div>
-                                                                            <label class="col-sm-2 col-form-label">Requer
-                                                                                Slot</label>
-                                                                            <div class="col-sm-4">
-                                                                                <input type="checkbox" checked data-toggle="toggle" data-on=" " data-off=" " data-onstyle="success" id="input_requireSlot" name="input_requireSlot" data-offstyle="danger" data-size="xs" onchange="console.log()">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="hr-line-dashed"></div>
-                                                                        <div class="row">
-                                                                            <label class="col-sm-2 col-form-label">Requer
-                                                                                autorização de pátio</label>
-                                                                            <div class="col-sm-4">
-                                                                                <input type="checkbox" checked data-toggle="toggle" data-on="  " data-off="  " data-onstyle="success" id="input_patioAuthorization" name="input_patioAuthorization" data-offstyle="danger" data-size="xs">
-                                                                            </div>
-                                                                            <label class="col-sm-2 col-form-label">Possui
-                                                                                iluminação</label>
-                                                                            <div class="col-sm-4">
-                                                                                <input type="checkbox" checked data-toggle="toggle" data-on="  " data-off="  " data-onstyle="success" id="input_hasLighting" name="input_hasLighting" data-offstyle="danger" data-size="xs">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="hr-line-dashed"></div>
+                                                                        <h1 id="title1">Tempo Adicional de 100%</h1>
 
-                                                                        <label class="col-sm-2 col-form-label"></label>
-                                                                        <div class="col-sm-12">
-                                                                            <textarea type="text" rows="4" name="input_comment" id="input_comment" class="form-control" placeholder="Digite aqui seu comentário"></textarea>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <br>
-                                                                <div class="form-group">
-                                                                    <div class="col-sm-4">
-                                                                        <button class="btn btn-white btn-sm btnClearInfo">Limpar</button>
-                                                                        <button class="btn btn-primary btn-sm btnSaveInfo">Salvar</button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="ibox">
-                                                                        <div class="ibox-content">
-
-                                                                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
-                                                                                <thead>
-                                                                                    <tr>
-
-                                                                                        <th data-toggle="true">
-                                                                                            Internacional
-                                                                                        </th>
-                                                                                        <th data-hide="phone">Requer Slot
-                                                                                        </th>
-                                                                                        <th data-hide="phone">
-                                                                                            Autorização de Patio</th>
-                                                                                        <th data-hide="phone">
-                                                                                            Possui iluminação</th>
-                                                                                        <th data-hide="phone">
-                                                                                            Comentário</th>
-                                                                                        <th data-hide="phone">Status
-                                                                                        </th>
-                                                                                        <th class="text-right" data-sort-ignore="true">
-                                                                                            Action</th>
-
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody id="table_airdromeAddInfo">
-                                                                                    <tr>
-                                                                                        <td>
-                                                                                            Não
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            Sim
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            Sim
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            Sim
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            Sim
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <span class="label label-primary">Enabled</span>
-                                                                                        </td>
-                                                                                        <td class="text-right">
-                                                                                            <div class="btn-group">
-                                                                                                <button class="btn-white btn btn-xs"><i
-                                                                                                        class="fa fa-search"></i>
-                                                                                                    View</button>
-                                                                                                <button class="btn-white btn btn-xs"><i
-                                                                                                        class="fa fa-edit"></i>
-                                                                                                    Edit</button>
-                                                                                                <button class="btn-white btn btn-xs"><i
-                                                                                                        class="far fa-trash-alt"></i>
-                                                                                                    Delete</button>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                                <tfoot>
-                                                                                    <tr>
-                                                                                        <td colspan="6">
-                                                                                            <ul class="pagination float-right">
-                                                                                            </ul>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tfoot>
-                                                                            </table>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Foto Aeronave -->
-                                                        <div class="col-lg-12 tab-pane fade" id="imageAircraft" role="tabpanel">
-                                                            <form name="form_media" id="form_media">
-                                                                <input type="hidden" id="input_mediaId" name="input_mediaId">
-                                                                <input type="hidden" id="input_airdromeId" name="input_airdromeId">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="col-lg-12">
-                                                                                <div class="card">
+                                                                        <body id="body">
+                                                                            <div class="row" id="cards">
+                                                                                <div class="card green" id="cardGreen2">
+                                                                                    <div id="h">
+                                                                                        <h3>Tempo de Contribuição</h3>
+                                                                                        <h4>28 anos, 5 meses e 12 dias</h4>
+                                                                                    </div>
 
 
-                                                                                    <form class="card" id="formRegister" method="post" enctype="multipart/form-data">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-12">
-                                                                                                <div class="avatar avatar-more">
-                                                                                                    </span>
-                                                                                                    <!-- <span>Insira a
-                                                                                                        <strong>
-                                                                                                            Foto(s)/Vídeo(s)
-                                                                                                        </strong>
-                                                                                                    </span> -->
-                                                                                                </div>
-                                                                                                <input type="file" id="photo" class="dropify">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </form>
+                                                                                    <div id="myProgress">
+                                                                                        <div id="myBarGreen2"></div>
+
+
+                                                                                        <h3 id="h">Necessario: 30 anos</h3>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="card red" id="cardRed2">
+                                                                                    <div id="h">
+                                                                                        <h3>Carência</h3>
+                                                                                        <h4>345 contribuições</h4>
+                                                                                    </div>
+
+                                                                                    <div id="myProgress">
+                                                                                        <div id="myBarRed2"></div>
+
+
+                                                                                        <h3 id="h">Necessario: 180 contribuições</h3>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="card blue" id="cardBlue2">
+                                                                                    <div id="h">
+                                                                                        <h3>Pontos</h3>
+                                                                                        <h4>86 pontos</h4>
+                                                                                    </div>
+
+                                                                                    <div id="myProgress">
+                                                                                        <div id="myBarBlue2"></div>
+
+                                                                                        <h3 id="h">Necessario 88 pontos</h3>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card blue" id="cardBlue2">
+                                                                                    <div id="h">
+                                                                                        <h3>Provável R.M.I</h3>
+
+                                                                                    </div>
+
+                                                                                    <div id="myProgress">
+
+                                                                                        <div id="myBarRmi">R$ 4.470,45</div>
+                                                                                        <h3 id="h"></h3>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
+
+
+                                                                        </body>
+                                                                        <h1 id="title1">Transição por Idade</h1>
+
+                                                                        <body id="body">
+                                                                            <div class="row" id="cards">
+                                                                                <div class="card green" id="cardGreen2">
+                                                                                    <div id="h">
+                                                                                        <h3>Tempo de Contribuição</h3>
+                                                                                        <h4>28 anos, 5 meses e 12 dias</h4>
+                                                                                    </div>
+
+
+                                                                                    <div id="myProgress">
+                                                                                        <div id="myBarGreen2"></div>
+
+
+                                                                                        <h3 id="h">Necessario: 30 anos</h3>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="card red" id="cardRed2">
+                                                                                    <div id="h">
+                                                                                        <h3>Carência</h3>
+                                                                                        <h4>345 contribuições</h4>
+                                                                                    </div>
+
+                                                                                    <div id="myProgress">
+                                                                                        <div id="myBarRed2"></div>
+
+
+                                                                                        <h3 id="h">Necessario: 180 contribuições</h3>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="card blue" id="cardBlue2">
+                                                                                    <div id="h">
+                                                                                        <h3>Pontos</h3>
+                                                                                        <h4>86 pontos</h4>
+                                                                                    </div>
+
+                                                                                    <div id="myProgress">
+                                                                                        <div id="myBarBlue2"></div>
+
+                                                                                        <h3 id="h">Necessario 88 pontos</h3>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card blue" id="cardBlue2">
+                                                                                    <div id="h">
+                                                                                        <h3>Provável R.M.I</h3>
+
+                                                                                    </div>
+
+                                                                                    <div id="myProgress">
+
+                                                                                        <div id="myBarRmi">R$ 4.470,45</div>
+
+
+                                                                                        <h3 id="h"></h3>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                        </body>
+
                                                                     </div>
                                                                     <br>
                                                                     <div class="form-group">
                                                                         <div class="col-sm-4">
-                                                                            <button class="btn btn-white btn-sm btnClear_photoAircraft">Limpar</button>
-                                                                            <button class="btn btn-primary btn-sm btnSave_photoAircraft">Salvar</button>
+                                                                            <a class="btn btn-white btn-sm btnBackTrans">Voltar</a>
+                                                                            <button class="btn btn-primary btn-sm btnSaveInfo">Salvar</button>
                                                                         </div>
                                                                     </div>
-
-
-
-                                                                </div>
                                                             </form>
+
+                                                            </div>
 
                                                         </div>
 
-                                                    </div>
-
-                                                    <!-- <div class="hr-line-dashed"></div>
+                                                        <!-- <div class="hr-line-dashed"></div>
                                                         <div class="form-group">
                                                             <div class="col-sm-4">
                                                                 <button class="btn btn-white btn-sm"
@@ -825,66 +795,66 @@
                                                             </div>
                                                         </div> -->
 
+                                                    </div>
                                                 </div>
-                                            </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+
+                            <!--Footer-->
+                            <%- include('../partials/footer') %>
+
+
 
                         </div>
 
-                        <!--Footer-->
-                        <%- include('../partials/footer') %>
+                        <!--Right sidebar-->
+                        <%- include('../partials/mainly-scripts') %>
 
+                            <!-- FooTable -->
+                            <script src="/js/plugins/footable/footable.all.min.js"></script>
 
+                            <!-- Select2 -->
+                            <script src="/js/plugins/select2/select2.full.min.js"></script>
 
-                </div>
+                            <!-- Datepicker -->
+                            <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-                <!--Right sidebar-->
-                <%- include('../partials/mainly-scripts') %>
+                            <!-- Steps -->
+                            <script src="/js/plugins/steps/jquery.steps.min.js"></script>
 
-                    <!-- FooTable -->
-                    <script src="/js/plugins/footable/footable.all.min.js"></script>
+                            <!-- Plan Edit -->
+                            <script src="/js/pages/calcEdit.js"></script>
 
-                    <!-- Select2 -->
-                    <script src="/js/plugins/select2/select2.full.min.js"></script>
+                            <script src="http://jeremyfagis.github.io/dropify/dist/js/dropify.js"></script>
 
-                    <!-- Datepicker -->
-                    <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+                            <!-- Page-Level Scripts -->
+                            <script>
+                                $(document).ready(function() {
 
-                    <!-- Steps -->
-                    <script src="/js/plugins/steps/jquery.steps.min.js"></script>
+                                    $('.footable').footable();
 
-                    <!-- Plan Edit -->
-                    <script src="/js/pages/calcEdit.js"></script>
+                                    $("#wizard").steps({
+                                        bodyTag: "fieldset",
+                                        stepsOrientation: "vertical",
+                                        enableAllSteps: true,
+                                        labels: {
+                                            cancel: "Voltar",
+                                            current: "Step atual:",
+                                            pagination: "Paginação'",
+                                            finish: "Finalizar",
+                                            next: "Próximo",
+                                            previous: "Anterior",
+                                            loading: "Carregando..."
+                                        }
+                                    });
 
-                    <script src="http://jeremyfagis.github.io/dropify/dist/js/dropify.js"></script>
-
-                    <!-- Page-Level Scripts -->
-                    <script>
-                        $(document).ready(function() {
-
-                            $('.footable').footable();
-
-                            $("#wizard").steps({
-                                bodyTag: "fieldset",
-                                stepsOrientation: "vertical",
-                                enableAllSteps: true,
-                                labels: {
-                                    cancel: "Voltar",
-                                    current: "Step atual:",
-                                    pagination: "Paginação'",
-                                    finish: "Finalizar",
-                                    next: "Próximo",
-                                    previous: "Anterior",
-                                    loading: "Carregando..."
-                                }
-                            });
-
-                        });
-                    </script>
+                                });
+                            </script>
     </body>
 
     </html>
