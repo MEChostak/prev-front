@@ -83,65 +83,67 @@ var calcEdit = (function() {
         element.parentNode.removeChild(element)
 
     }
-    calcEdit.edit = function() {
-        console.log('edit')
 
-        function edit_row(no) {
-            document.getElementById("edit_button" + no).style.display = "none";
-            document.getElementById("save_button" + no).style.display = "block";
+    // calcEdit.edit = function() {
+    //     console.log('edit')
 
-            var name = document.getElementById("nome_row" + no);
-            var cpf = document.getElementById("cpf_row" + no);
-            var rg = document.getElementById("rg_row" + no);
+    //     function edit_row(no) {
+    //         document.getElementById("edit_button" + no).style.display = "none";
+    //         document.getElementById("save_button" + no).style.display = "block";
 
-            var name_data = name.innerHTML;
-            var cpf_data = cpf.innerHTML;
-            var rg_data = rg.innerHTML;
+    //         var name = document.getElementById("nome_row" + no);
+    //         var cpf = document.getElementById("cpf_row" + no);
+    //         var rg = document.getElementById("rg_row" + no);
 
-            name.innerHTML = "<input type='text' id='name_text" + no + "' value='" + name_data + "'>";
-            cpf.innerHTML = "<input type='text' id='cpf_text" + no + "' value='" + cpf_data + "'>";
-            rg.innerHTML = "<input type='text' id='rg_text" + no + "' value='" + rg_data + "'>";
-        }
+    //         var name_data = name.innerHTML;
+    //         var cpf_data = cpf.innerHTML;
+    //         var rg_data = rg.innerHTML;
 
-        function save_row(no) {
-            var name_val = document.getElementById("name_text" + no).value;
-            var cpf_val = document.getElementById("cpf_text" + no).value;
-            var rg_val = document.getElementById("rg_text" + no).value;
+    //         name.innerHTML = "<input type='text' id='name_text" + no + "' value='" + name_data + "'>";
+    //         cpf.innerHTML = "<input type='text' id='cpf_text" + no + "' value='" + cpf_data + "'>";
+    //         rg.innerHTML = "<input type='text' id='rg_text" + no + "' value='" + rg_data + "'>";
+    //     }
 
-            document.getElementById("nome_row" + no).innerHTML = name_val;
-            document.getElementById("cpf_row" + no).innerHTML = cpf_val;
-            document.getElementById("rg_row" + no).innerHTML = rg_val;
+    //     function save_row(no) {
+    //         var name_val = document.getElementById("name_text" + no).value;
+    //         var cpf_val = document.getElementById("cpf_text" + no).value;
+    //         var rg_val = document.getElementById("rg_text" + no).value;
 
-            document.getElementById("edit_button" + no).style.display = "block";
-            document.getElementById("save_button" + no).style.display = "none";
-        }
+    //         document.getElementById("nome_row" + no).innerHTML = name_val;
+    //         document.getElementById("cpf_row" + no).innerHTML = cpf_val;
+    //         document.getElementById("rg_row" + no).innerHTML = rg_val;
 
-        function delete_row(no) {
-            document.getElementById("row" + no + "").outerHTML = "";
-        }
+    //         document.getElementById("edit_button" + no).style.display = "block";
+    //         document.getElementById("save_button" + no).style.display = "none";
+    //     }
 
-        function add_row() {
-            var new_name = document.getElementById("new_name").value;
-            var new_cpf = document.getElementById("new_cpf").value;
-            var new_rg = document.getElementById("new_rg").value;
+    //     function delete_row(no) {
+    //         document.getElementById("row" + no + "").outerHTML = "";
+    //     }
 
-            var table = document.getElementById("data_table");
-            var table_len = (table.rows.length) - 1;
-            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='nome_row" +
-                table_len + "'>" + new_name + "</td><td id='cpf_row" + table_len + "'>" + new_cpf +
-                "</td><td id='rg_row" + table_len + "'>" + new_rg + "</td><td><input type='button' id='edit_button" +
-                table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len +
-                ")'> <input type='button' id='save_button" + table_len +
-                "' value='Salvar' class='save' onclick='save_row(" + table_len +
-                ")'> <input type='button' value='Deletar' class='delete' onclick='delete_row(" + table_len +
-                ")'></td></tr>";
+    //     function add_row() {
+    //         var new_name = document.getElementById("new_name").value;
+    //         var new_cpf = document.getElementById("new_cpf").value;
+    //         var new_rg = document.getElementById("new_rg").value;
 
-            document.getElementById("new_name").value = "";
-            document.getElementById("new_cpf").value = "";
-            document.getElementById("new_rg").value = "";
-        }
+    //         var table = document.getElementById("data_table");
+    //         var table_len = (table.rows.length) - 1;
+    //         var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='nome_row" +
+    //             table_len + "'>" + new_name + "</td><td id='cpf_row" + table_len + "'>" + new_cpf +
+    //             "</td><td id='rg_row" + table_len + "'>" + new_rg + "</td><td><input type='button' id='edit_button" +
+    //             table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len +
+    //             ")'> <input type='button' id='save_button" + table_len +
+    //             "' value='Salvar' class='save' onclick='save_row(" + table_len +
+    //             ")'> <input type='button' value='Deletar' class='delete' onclick='delete_row(" + table_len +
+    //             ")'></td></tr>";
 
-    }
+    //         document.getElementById("new_name").value = "";
+    //         document.getElementById("new_cpf").value = "";
+    //         document.getElementById("new_rg").value = "";
+    //     }
+
+    // }
+
     calcEdit.validateForm = function() {
         $('#form_user').validate({
             rules: {
