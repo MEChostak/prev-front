@@ -1,3 +1,5 @@
+// const { getFilenameFromUrl } = require("pdfjs-dist");
+
 var calcEdit = (function() {
     'use strict';
     //var initialPage = 1;
@@ -34,11 +36,7 @@ var calcEdit = (function() {
         $('.btnNext').on('click', calcEdit.closeModal)
         $('.btnDelete').on('click', calcEdit.delete)
         $('.btnEdit').on('click', calcEdit.edit)
-        $('.btnProx').on('click', calcEdit.proximo)
-        $('.btnProxWage').on('click', calcEdit.proximowage)
-        $('.btnProxResu').on('click', calcEdit.proximoresu)
-        $('.btnBackTrans').on('click', calcEdit.voltartrans)
-        $('.btnBackContri').on('click', calcEdit.voltarcontri)
+
 
 
 
@@ -46,102 +44,343 @@ var calcEdit = (function() {
 
         calcEdit.setMask();
 
-        $('.dropify').dropify();
-        $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+
 
     };
-    calcEdit.proximo = function() {
-        $('#wage-tab').tab('show');
 
-
-    }
-    calcEdit.proximowage = function() {
-        $('#transition-tab').tab('show');
-
-    }
-    calcEdit.proximoresu = function() {
-        $('#calcResume-tab').tab('show');
-
-    }
-    calcEdit.voltartrans = function() {
-        $('#transition-tab').tab('show');
-
-
-    }
-    calcEdit.voltarcontri = function() {
-        $('#contribution-tab').tab('show');
-
-
-    }
     calcEdit.setMask = function() {
 
     }
 
     calcEdit.delete = function(data) {
-        console.log(data)
-        var element = document.getElementById('')
-        element.parentNode.removeChild(element)
+        console.log('testadndoooo')
+            // let tr = document.querySelectorAll('tr');
+            // tr.forEach((e) => {
+            //     console.log('O ID é: ' + e.id);
 
+        //     let idd = e.id
+        //     if (idd) {
+        //         idd.remove();
+        //     }
+
+
+        // })
     }
     calcEdit.edit = function() {
-        console.log('edit')
 
-        function edit_row(no) {
-            document.getElementById("edit_button" + no).style.display = "none";
-            document.getElementById("save_button" + no).style.display = "block";
 
-            var name = document.getElementById("nome_row" + no);
-            var cpf = document.getElementById("cpf_row" + no);
-            var rg = document.getElementById("rg_row" + no);
 
-            var name_data = name.innerHTML;
-            var cpf_data = cpf.innerHTML;
-            var rg_data = rg.innerHTML;
+        $('#cancelar').on('click', function() {
+            $('#num').val('');
+            // $('#DataInicial').val('');
+            // $('#DataFinal').val('');
+            // $('#Tipo').val('');
+            // $('#Fator').val('');
+            // $('#Empresa').val('');
+            // $('#Cargo').val('');
 
-            name.innerHTML = "<input type='text' id='name_text" + no + "' value='" + name_data + "'>";
-            cpf.innerHTML = "<input type='text' id='cpf_text" + no + "' value='" + cpf_data + "'>";
-            rg.innerHTML = "<input type='text' id='rg_text" + no + "' value='" + rg_data + "'>";
+
+        });
+        $('#registrar').on('click', function() {
+
+            var num = form1.num.value;
+            // var emailVal = form1.email.value;
+            // var ddnVal = form1.DN.value;
+            // var cepVal = form1.CEP.value;
+
+            var testCad = 0;
+
+            console.log(num);
+
+            if (num != "" && ddnVal != "" && emailVal != "" && cepVal != "")
+
+                if (num != "") {
+
+
+
+                    var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+                    if (filtro.test(num)) {
+
+
+                        $('#tabCrud').append('<tr"><td>' + num + '</td> <td>' + emailVal + '</td><td>' + ddnVal + '</td><td>' + cepVal + '</td> <td><input type="button" class="AltBut" value="Alterar"/></td> <td><input type="button" class="salBut" value="Salvar"/></td><td><input type="button" class="ExBut" value="Excluir"/></td></tr>');
+                        $('#tabCrud').append('<tr"><td>' + num + '</td> <td><input type="button" class="AltBut" value="Alterar"/></td> <td><input type="button" class="salBut" value="Salvar"/></td><td><input type="button" class="ExBut" value="Excluir"/></td></tr>');
+
+                        $('#num').val('');
+                        // $('#DN').val('');
+                        // $('#email').val('');
+                        // $('#CEP').val('');
+
+                        //$('.salBut').hide();
+
+
+                        $(".AltBut").bind("click", Editar);
+                        $(".salBut").bind("click", FunSal);
+                        $(".ExBut").bind("click", Excluir);
+
+
+                        return true;
+
+
+                    } else {
+                        alert("Não é válido!");
+
+                        return false;
+                    }
+
+
+
+                } else {
+
+                    alert("Todos os campos são obrigatorios");
+                }
+
+
+
+
+
+
+
+            function Editar() {
+
+                var par = $(this).parent().parent(); //tr
+                var num = par.children("td:nth-child(1)");
+                // var tdEmail = par.children("td:nth-child(2)");
+                // var tdDN = par.children("td:nth-child(3)");
+                // var tdCEP = par.children("td:nth-child(4)");
+
+
+
+
+                num.html("<input type ='text' value='" + num.html() + "'/td>");
+                // tdEmail.html("<input type='text' id='txtEmail' value='" + tdEmail.html() + "'/>");
+                // tdDN.html("<input type='text'id='txtDN' value='" + tdDN.html() + "'/>");
+                // tdCEP.html("<input type='text'id='txtDN' value='" + tdCEP.html() + "'/>");
+
+
+                //$('.salBut').show()
+
+            }
+
+
+            function FunSal() {
+                var par = $(this).parent().parent(); //tr
+                var num = par.children("td:nth-child(1)");
+                // var tdDN = par.children("td:nth-child(2)");
+                // var tdEmail = par.children("td:nth-child(3)");
+                // var tdCEP = par.children("td:nth-child(4)");
+
+                num.html(num.children("input[type=text]").val());
+                // tdDN.html(tdDN.children("input[type=text]").val());
+                // tdEmail.html(tdEmail.children("input[type=text]").val());
+                // tdCEP.html(tdCEP.children("input[type=text]").val());
+                //$('.AltBut').show();
+                //$('.salBut').hide();
+
+
+            };
+
+
+            function Excluir() {
+                var par = $(this).parent().parent();
+                //$('.AltBut').show() //tr
+                par.remove();
+            };
+        });
+    }
+    calcEdit.calc = function() {
+
+
+
+        // B21 Pensão por morte previdenciária
+        // B25 Auxílio-reclusão
+        // B31 Auxílio-doença previdenciário(temporario)
+        const doenca = function() {
+            var timeContri = 0
+            var carencia = 0
+            var incapacidade = 0
+            var coeficiente = '91%'
+
+
         }
 
-        function save_row(no) {
-            var name_val = document.getElementById("name_text" + no).value;
-            var cpf_val = document.getElementById("cpf_text" + no).value;
-            var rg_val = document.getElementById("rg_text" + no).value;
 
-            document.getElementById("nome_row" + no).innerHTML = name_val;
-            document.getElementById("cpf_row" + no).innerHTML = cpf_val;
-            document.getElementById("rg_row" + no).innerHTML = rg_val;
 
-            document.getElementById("edit_button" + no).style.display = "block";
-            document.getElementById("save_button" + no).style.display = "none";
+        // B32 Aposentadoria por invalidez previdenciária
+        const incapacidade = function() {
+            // requisitos
+            let contri = 365
+            let incapacidade = "incapacidade permanente para o trabalho comprovado com pericia oficial"
+            let segurado = "qualidade de segurado"
+                // calculo 
+            let salario = "60% da media de todas as contribuiçoes a partir de 07/94 + 2% por ano que ultrapassar os 20 anos. 100% da media quando decrorrer de acidentes de trabalho, doença profissional ou doença do trabalho."
+
+
         }
 
-        function delete_row(no) {
-            document.getElementById("row" + no + "").outerHTML = "";
+        // B36 Auxílio acidente
+        const acidente = function() {
+            let salario = '50% beneficio'
+
         }
 
-        function add_row() {
-            var new_name = document.getElementById("new_name").value;
-            var new_cpf = document.getElementById("new_cpf").value;
-            var new_rg = document.getElementById("new_rg").value;
+        // B41 Aposentadoria por idade
+        const idade = function() {
+            // requisitos apos a reforma
+            let idadeMan = 65
+            let idadeWoman = 62
+            let carenciaWoman = 5475
+            let carenciaMan = 7300
+            let rmi = "60% da media de todos os seus salarios + 2% a cada ano que ultrapassar 20 anos para os homens e 15 anos para as mulheres "
 
-            var table = document.getElementById("data_table");
-            var table_len = (table.rows.length) - 1;
-            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='nome_row" +
-                table_len + "'>" + new_name + "</td><td id='cpf_row" + table_len + "'>" + new_cpf +
-                "</td><td id='rg_row" + table_len + "'>" + new_rg + "</td><td><input type='button' id='edit_button" +
-                table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len +
-                ")'> <input type='button' id='save_button" + table_len +
-                "' value='Salvar' class='save' onclick='save_row(" + table_len +
-                ")'> <input type='button' value='Deletar' class='delete' onclick='delete_row(" + table_len +
-                ")'></td></tr>";
+            // requisitos antes da reforma 
+            let idadeManBefore = 65
+            let idadeWomanBefore = 60
+            let carenciaWomanBefore = 5475
+            let carenciaManBefore = 5475
+            let rmiBefore = "70% da media dos seus maiores salarios +1% a cada ano completo de trabalho"
+                // a regra so e valida se vc completou os requisitos ate o dia 12/11/2019
 
-            document.getElementById("new_name").value = "";
-            document.getElementById("new_cpf").value = "";
-            document.getElementById("new_rg").value = "";
+            //caso nao tenha completado os requisitos mas ja tenha começado a trabalhar antes da reforma, foi criada uma regra de transição  
+            let idadeManMiddle = 65
+            let idadeWomanMiddle = 61.5
+            let carenciaWomanMiddle = 5475
+            let carenciaManMiddle = 5475
+            let rmiMiddle = "60% da media de todos os seus salarios + 2% a cada ano que ultrapassar 20 anos para os homens e 15 anos para as mulheres "
+
+            // calculo antes da reforma 
+            const timeContri = dataFinal - dataInicial + 1
+            let timeContri80 = timeContri / 100 * 80
+            const salario = salario
+            let maioresSalarios = "80% dos maiores",
+                salario
+            let salarioBeneficio = timeContri80 / 240
+            let sobrevida = 76.8
+            let aliquota1 = salario / 100 * 8 //ate 1693,72
+            let aliquota2 = salario / 100 * 9 // de 1693,72 ate 2822,90
+            let aliquota3 = salario / 100 * 11 // de 2822,90 até 5645,80
+            let fatorPrevidenciario = timeContri * aliquota / sobrevida * [1 + (idadeContri + timeContri * aliquota) / 100]
+
+
+            let rmi = salarioBeneficio / 100 * 70
+
+
         }
+
+        // B42 Aposentadoria por tempo de contribuição
+        const time = function() {
+            let timeContriMan = 12775
+            let timeContriWoman = 10950
+            let idade = 0
+            let rmi = "80% das maiores contribuiçoes a partir de julho de 94 devidamente atualizadas pelo ipca ou ipca-E, 20% das contribuiçoes podem ser descartadas automaticamente e sobre esse valor se aplica o fator previdenciario"
+
+            let fatorPrevidenciario = timeContri * aliquota / sobrevida * [1 + (idade + timeContri * aliquota) / 100]
+
+            // APOSENTADORIA POR TEMPO DE CONTRIBUICAO SEM FATOR PREVIDENCIARIO ATÉ 12/11/2019: 
+
+            let pointsMan = timeContriMan == 12775 && idade == 61
+            let pointsWoman = timeContriWoman == 10950 && idade == 55
+                // fatorprevidenciario = 0
+
+
+        }
+
+        // B46 Aposentadoria por tempo de contribuição especial
+        const especialContri = function() {
+            let timeLowContri = 9125
+            let timeMiddleContri = 7300
+            let timeHightContri = 5475
+            let rmi = "100% da media dos 80% maiores salarios a partir de julho de 94"
+
+        }
+
+        // B57 Aposentadoria por tempo de contribuição do professor
+        const professor = function() {
+                let timeContriMan = 10950
+                let timeContriWoman = 9125
+                let idade = 0
+                let rmi = "80% maiores salarios"
+                    // Cálculo do professor será igual a aposentadoria por tempo de contribuição normal com redutor de 5 anos no tempo e na idade;
+
+            }
+            // B92 Aposentadoria por invalidez por acidente do trabalho
+        const incapacidadeAcidente = function() {
+            // forma de calculo
+            let salario = "100% da media aritmetica de 80% dos maiores salario"
+        }
+
+        // B93 Pensão por morte acidentária
+        // B91 Auxílio-doença por acidente do trabalho comum
+        const doencaComum = function() {
+            var timeContri = 0
+            var carencia = 0
+            var incapacidade = 0
+            var salario = 80 % salarios
+            var media = salario / numSalario
+        }
+
+        // B94 Auxílio-acidente por acidente do trabalho
+        const acidenteTrab = function() {
+            let salario = '50% beneficio'
+        }
+
+
+
+
+
+
+
+        const timeContri = 10950
+        let calcContri = dataFinal - dataInicial + 1
+        let porc = timeContri / 100
+        let porcTime = timeContri / porc
+
+        const carencia = 180
+        let carenciaCount = numCarencia
+        let porcCarencia = carencia / 100
+        let porcCountriCarencia = carencia / porcCarencia
+
+
+        const point = 88
+        let pointCount = numPoint
+        let porcPoint = point / 100
+        let porcePoint = point / porcPoint
+        const y = pdf
+
+
+
+
+        // time contribution bar 
+        if (calcContri < timeContri) {
+            div.style = "width: porcTime%;"
+            div.class = "progress-bar progress-bar-danger"
+        }
+        if (calcContri >= timeContri) {
+            div.style = "width: 100%;"
+            div.class = "progress-bar"
+        }
+        // carencia 
+        if (carenciaCount < carencia) {
+            div.style = "width: porcContriCarencia%;"
+            div.class = "progress-bar progress-bar-danger"
+        }
+        if (carenciaCount >= carencia) {
+            div.style = "width: 100%;"
+            div.class = "progress-bar"
+        }
+        // pontos 
+        if (pointCount < point) {
+            div.style = "width: porcePoint%;"
+            div.class = "progress-bar progress-bar-danger"
+        }
+        if (pointCount >= point) {
+            div.style = "width: 100%;"
+            div.class = "progress-bar"
+        }
+
 
     }
+
     calcEdit.validateForm = function() {
         $('#form_user').validate({
             rules: {

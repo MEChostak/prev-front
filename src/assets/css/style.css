@@ -12173,8 +12173,6 @@ body.md-skin {
     text-align: center;
     background-color: #1ab394;
     color: rgb(255, 255, 255);
-    font-family: "Times New Roman", Times, serif;
-    text-shadow: 1px 1px 2px black;
 }
 
 #card1 {
@@ -12352,9 +12350,13 @@ body.md-skin {
 #table {
     max-width: 100%;
     height: auto;
-    overflow: scroll;
+    overflow: auto;
 }
 
 #subcrip {
     color: red
+}
+
+#help {
+    overflow: auto;
 }

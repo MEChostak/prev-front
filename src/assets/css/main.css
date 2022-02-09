@@ -1,12 +1,18 @@
-.wizard.vertical > .steps {
+.wizard.vertical>.steps {
     width: 23%;
 }
 
-.wizard.vertical > .content {
+.wizard.vertical>.content {
     width: 72%;
 }
 
-.wizard > .steps a, .wizard > .steps a:hover, .wizard > .steps a {
+.wizard>.steps a,
+.wizard>.steps a:hover,
+.wizard>.steps a {
     background-color: #dedede;
     color: #2F4050;
+}
+
+.wizard>.content>.body {
+    position: relative;
 }

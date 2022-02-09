@@ -98,6 +98,8 @@ app.get('/table/create', function(req, res) {
     //baseController.renderPage(req, res, 'dashboard');
 });
 
+
+
 // Calc *********
 app.get('/calc', function(req, res) {
     res.render('pages/calcList');
