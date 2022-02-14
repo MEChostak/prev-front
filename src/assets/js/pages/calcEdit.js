@@ -442,6 +442,7 @@ var calcEdit = (function() {
 
 
     }
+
     calcEdit.validateForm = function() {
         $('#form_user').validate({
             rules: {
