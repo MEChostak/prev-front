@@ -44,6 +44,751 @@
 
                                                     <h1>Tipo de Cálculo</h1>
                                                     <fieldset>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+
+                                                                <!-- NAVIGATION -->
+                                                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                                    <li class="nav-item">
+                                                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#typeCalc" role="tab" aria-controls="typeCalc" aria-selected="true">Tipo de Cálculo
+                                                            </a>
+                                                                    </li>
+                                                                    <!-- <li class="nav-item">
+                                                            <a class="nav-link" id="cnis-tab" data-toggle="tab" href="#cnis" role="tab" aria-controls="cnis" aria-selected="false">Upload do CNIS</a>
+                                                        </li> -->
+                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" id="contribution-tab" data-toggle="tab" href="#contribution" role="tab" aria-controls="contribution" aria-selected="false">Tempo de Contribuição</a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" id="wage-tab" data-toggle="tab" href="#wage" role="tab" aria-controls="wage" aria-selected="false">Salários de Contribuição</a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" id="transition-tab" data-toggle="tab" href="#transition" role="tab" aria-controls="transition" aria-selected="false">Regras de Transição</a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" id="calcResume-tab" data-toggle="tab" href="#calcResume" role="tab" aria-controls="calcResume" aria-selected="false">Resumo do Calculo</a>
+                                                                    </li>
+                                                                </ul>
+
+                                                                <br>
+                                                                <div class="row tab-content" id="nav-tabContent">
+                                                                    <div class="col-12 tab-pane fade show active" id="typeCalc" role="tabpanel">
+                                                                        <form name="form_calc" id="form_calc">
+                                                                            <!-- Tipo de calculo -->
+                                                                            <div class="card">
+
+                                                                                <div class="card-body">
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-sm-2 col-form-label">Qual calculo deseja
+                                                                                Fazer?</label>
+                                                                                        <div class="col-sm-10">
+                                                                                            <select id="select_type" name="select_type" class="form-control">
+                                                                                    <option value="" disabled selected>Selecione um tipo
+                                                                                        de cálculo</option>
+                                                                                    <option value="1">Cálculo de revisões, valor da
+                                                                                        causa ou liquidação de sentença</option>
+                                                                                    <option value="2">Cálculo da R.M.I, do tempo de
+                                                                                        contribuição e planejamento futuro</option>
+                                                                                    <option value="3">Cálculo de tempo de contribuição
+                                                                                    </option>
+                                                                                    <option value="4">Cálculo do melhor benefício em um
+                                                                                        período</option>
+                                                                                    <option value="5">Cálculo das contribuições em
+                                                                                        atraso</option>
+                                                                                </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="hr-line-dashed"></div>
+                                                                                    <div class="form-group  row">
+                                                                                        <label class="col-sm-2 col-form-label">Qual a especie do
+                                                                                benefício?</label>
+                                                                                        <div class="col-sm-10">
+                                                                                            <select id="select_type" name="select_type" class="form-control">
+                                                                                    <option value="2" disabled selected>Benefícios
+                                                                                        Programáveis</option>
+                                                                                    <option value="42">Aposentadoria por tempo de
+                                                                                        contribuição ou programada </option>
+                                                                                    <option value="57">Aposentadoria por tempo de
+                                                                                        contribuição ou programada de professor (até
+                                                                                        nivel médio)</option>
+                                                                                    <option value="46">Aposentadoria especial</option>
+                                                                                    <option value="41">Aposentadoria por idade ou
+                                                                                        programada</option>
+                                                                                    <option value="07">Aposentadoria por idade ou
+                                                                                        programada</option>
+                                                                                    <option value="" disabled selected>Benefícios por
+                                                                                        incapacidade</option>
+                                                                                    <option value="31">Auxílio doença previdenciário ou
+                                                                                        incapacidade temporária</option>
+                                                                                    <option value="91">Auxílio doença acidentário ou
+                                                                                        incapacidade temporária</option>
+                                                                                    <option value="32">Invalidez ou incapacidade
+                                                                                        permanente previdenciário</option>
+                                                                                    <option value="92">Invalidez ou incapacidade
+                                                                                        permanente por acidente do trabalho</option>
+                                                                                    <option value="36">Auxílio acidente previdenciário
+                                                                                    </option>
+                                                                                    <option value="94">Auxílio acidente por acidente do
+                                                                                        trabalho</option>
+                                                                                    <option value="80">Salário maternidade</option>
+                                                                                    <option value="" disabled selected>Benefícios quanto
+                                                                                        aos dependentes</option>
+                                                                                    <option value="21">Pensão por morte previdenciária
+                                                                                    </option>
+                                                                                    <option value="93">Pensão por morte por acidente de
+                                                                                        trabalho</option>
+                                                                                    <option value="25">Auxílio reclusão</option>
+                                                                                    <option value="" disabled selected>Benefícios
+                                                                                        assistencias</option>
+                                                                                    <option value="87">Amparo assistencial ao portador
+                                                                                        de deficiência</option>
+                                                                                    <option value="88">Amparo Assistencial ao idoso
+                                                                                    </option>
+
+                                                                                </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="hr-line-dashed"></div>
+
+                                                                                    <input type="file" id="pdf" name="pdf" class="dropify">
+                                                                                </div>
+                                                                                <div class="col-lg-2" style="margin-top: 15px;">
+                                                                                    <button class="btn btn-primary fa fa-file-import btn-sm btnRegister"> Importar Cnis</button>
+                                                                                </div>
+                                                                                <br>
+                                                                                <br>
+                                                                            </div>
+
+                                                                            <!-- Button trigger modal -->
+                                                                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                                    Launch demo modal
+                                                                            </button> -->
+                                                                            <!-- Modal -->
+                                                                            <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title" id="exampleModalLabel">Sucesso</h5>
+                                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            <strong>Importação concluida com sucesso. <br><br> Atenção!!! Os dados importados precisam ser conferidos, pois dependendo da formatação do arquivo
+                                                                                PDF, pode não ser possível a leitura correta de alguma(s) informação(ões)</strong>
+                                                                                        </div>
+                                                                                        <div class="modal-footer">
+                                                                                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+
+                                                                                            <button class="btn btn-primary btn-sm btnNext">Vou Conferir!</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-2" style="margin-top: 30px;">
+                                                                                <a class="btn btn-white fa fa-arrow-left btn-sm btnCancel"> Voltar</a>
+
+                                                                                <!-- <a class="btn btn-primary btn-sm">Próximo</a> -->
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+
+                                                                    <!-- cnis -->
+                                                                    <div class="col-lg-12 col-md-12 tab-pane fade" id="cnis" role="tabpanel">
+                                                                        <form name="form_cnis" id="form_cnis">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+
+                                                                                    <input type="file" id="pdf" name="pdf" class="dropify">
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-2" style="margin-top: 30px;">
+                                                                                <button class="btn btn-primary fas fa-file-import btn-sm btnRegister"> Importar Cnis</button>
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+
+                                                                    <!-- tempo de contribuição -->
+                                                                    <div class="col-lg-12 col-md-12 tab-pane fade" id="contribution" role="tabpanel">
+                                                                        <form name="form_contribution" id="form_contribution">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <h1>Tempo de Contribuição</h1>
+                                                                                    <h4>Como deseja informar o tempo de contribuição?</h4>
+
+                                                                                    <input type="radio" name="contribution" value="Informar os Períodos Trabalhados em cada Empresa" /> Informar os Períodos Trabalhados em cada Empresa<br />
+                                                                                    <input type="radio" name="contribution" value="Informar Diretamente o Tempo de Contribuição do Requerente" /> Informar Diretamente o Tempo de Contribuição do Requerente
+                                                                                    <br>
+                                                                                    <br>
+                                                                                    <div id="table">
+                                                                                        <table border="1">
+                                                                                            <tr>
+
+                                                                                                <td>N°</td>
+                                                                                                <td>Data Inicial</td>
+                                                                                                <td>Data Final</td>
+                                                                                                <td>Tipo</td>
+                                                                                                <td>Fator</td>
+                                                                                                <td>Empresa</td>
+                                                                                                <td>Cargo</td>
+
+
+                                                                                            </tr>
+                                                                                            <tr id="1">
+                                                                                                <td><label for="numero">001</label></td>
+                                                                                                <td><label for="dataInicial"> 23/12/2021</label></td>
+                                                                                                <td><label for="dataFinal"></label> 25/01/2022</td>
+                                                                                                <td><label for="tipo"></label> Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="2">
+                                                                                                <td>035</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="3">
+                                                                                                <td>036</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="4">
+                                                                                                <td>037</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="5">
+                                                                                                <td>034</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="6">
+                                                                                                <td>034</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="7">
+                                                                                                <td>034</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="8">
+                                                                                                <td>034</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr id="9">
+                                                                                                <td>034</td>
+                                                                                                <td>23/12/2021</td>
+                                                                                                <td>25/01/2022</td>
+                                                                                                <td>Periodo Normal</td>
+                                                                                                <td>1000</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
+                                                                                                <td>PROMOTOR DE JUSTIÇA</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                        <br>
+                                                                                        <div>
+                                                                                            <input type="checkbox" id="scales" name="scales">
+                                                                                            <label for="scales">Não projetar o tempo de contribuição para o cálculo futuro</label>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                    <br>
+                                                                                </div>
+                                                                            </div>
+                                                                            <br>
+
+                                                                            <body id="body">
+                                                                                <div class="row" id="cards">
+
+                                                                                    <div class="card green" id="cardGreen1">
+                                                                                        <div id="h">
+                                                                                            <h3>Tempo de Contribuição</h3>
+                                                                                            <h4>28 anos, 5 meses e 12 dias</h4>
+                                                                                        </div>
+
+
+                                                                                        <div id="myProgress">
+                                                                                            <div id="myBarGreen1">Faltam 1 ano, 6 meses e 18 dias</div>
+
+                                                                                            <h3 id="h">Necessario: 30 anos</h3>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="card red" id="cardRed1">
+                                                                                        <div id="h">
+                                                                                            <h3>Carência</h3>
+                                                                                            <h4>345 contribuições</h4>
+                                                                                        </div>
+
+                                                                                        <div id="myProgress">
+                                                                                            <div id="myBarRed1">Atingido</div>
+
+
+                                                                                            <h3 id="h">Necessario: 180 contribuições</h3>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="card blue" id="cardBlue1">
+                                                                                        <div id="h">
+                                                                                            <h3>Pontos</h3>
+                                                                                            <h4>86 pontos</h4>
+                                                                                        </div>
+
+                                                                                        <div id="myProgress">
+                                                                                            <div id="myBarBlue1">Faltam dois pontos</div>
+
+                                                                                            <h3 id="h">Necessario 88 pontos</h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </body>
+                                                                            <br>
+                                                                            <button class="btn btn-white btn-sm btnClearInfo"> Voltar</button>
+                                                                            <a class="btn btn-primary btn-sm btnProx">Proximo</a>
+
+                                                                        </form>
+                                                                    </div>
+
+                                                                    <!-- Salarios de contribuição-->
+                                                                    <div class="col-lg-12 col-md-12 tab-pane fade" id="wage" role="tabpanel">
+                                                                        <form name="form_wage" id="form_wage">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+
+                                                                                    <br>
+                                                                                    <br>
+                                                                                    <div id="table">
+                                                                                        <table border="1">
+                                                                                            <tr>
+                                                                                                <td>Mês/Ano</td>
+                                                                                                <td>Nome da Empresa</td>
+                                                                                                <td>Valor do Salario</td>
+
+
+
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>01/1992</td>
+                                                                                                <td>TRIBUNAL DE JUSTIÇA DO ESTADO DO MATO GROSSO</td>
+                                                                                                <td>R$ 33.957,96</td>
+                                                                                                <td>
+                                                                                                    <a href="#" class="btn btn-white  fa fa-trash btn-sm btnDelete"> </a>
+                                                                                                    <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                                </td>
+                                                                                            </tr>
+
+                                                                                        </table>
+                                                                                        <br>
+                                                                                        <div>
+
+                                                                                        </div>
+                                                                                        <br>
+                                                                                        <div>
+                                                                                            <input type="checkbox" id="scales" name="scales">
+                                                                                            <label for="scales"> Efetuar cálculo da vida toda (Considerar salários anteriores a 07/1994)</label>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <input type="checkbox" id="scales" name="scales">
+                                                                                            <label for="scales"> Considerar 1 salário minimo nos meses sem salário de contribuição</label>
+
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <h6 id="subcrip">* Os salarios de contribuição exibidos na cor vermelha são menores que 1 salário minimo</h6>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <br>
+                                                                            <button class="btn btn-white btn-sm btnClearInfo"> Voltar</button>
+
+                                                                            <a class="btn btn-primary btn-sm btnProxWage">Proximo</a>
+                                                                        </form>
+                                                                    </div>
+
+
+                                                                    <!-- Regras de transição -->
+
+                                                                    <div class="col-lg-12 tab-pane fade" id="transition" role="tabpanel">
+                                                                        <form name="form_transition" id="form_transition">
+
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+
+                                                                                    <h1 id="title1">Tempo Adicional de 100%</h1>
+
+                                                                                    <br>
+                                                                                    <div class="card">
+                                                                                        <div id="timeContri">
+                                                                                            <h3>Tempo de Contribuição (Necessário 33 anos, 2 meses e 5 dias):</h3>
+                                                                                            <p>Possui 28 anos, 5 meses e 12 dias (Faltam 4 anos, 8 meses e 23 dias)</p>
+                                                                                        </div>
+                                                                                        <div id="rmiCard">
+                                                                                            <h3>Provável RMI:</h3>
+                                                                                            <p>R$ 4.470,71</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <br>
+                                                                                    <div class="card">
+                                                                                        <div id="timeContri">
+                                                                                            <h3>Idade (Necessario 57 anos na data da Aposentadoria):</h3>
+                                                                                            <p>Possui Idade de 57 anos, 10 meses e 14 dias</p>
+                                                                                        </div>
+                                                                                        <div id="rmiCard">
+                                                                                            <h3>Possivel Aposentadoria:</h3>
+                                                                                            <p>10/05/2026</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <br>
+                                                                                    <h1 id="title1">Transição por Idade</h1>
+                                                                                    <br>
+                                                                                    <div class="card">
+                                                                                        <div id="timeContri">
+                                                                                            <h3>Tempo de Contribuição (Necessário 15 anos na data da Aposentadoria):</h3>
+                                                                                            <p>Possui 28 anos, 5 meses e 12 dias</p>
+                                                                                        </div>
+                                                                                        <div id="rmiCard">
+                                                                                            <h3>Provável RMI:</h3>
+                                                                                            <p>R$ 4.470,45</p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <br>
+
+                                                                                    <div class="card">
+                                                                                        <div id="timeContri">
+                                                                                            <h3>Idade (Necessario 62 anos na data da Aposentadoria):</h3>
+                                                                                            <p>Possui Idade de 57 anos, 10 meses e 14 dias</p>
+                                                                                        </div>
+                                                                                        <div id="rmiCard">
+                                                                                            <h3>Possivel Aposentadoria:</h3>
+                                                                                            <p>10/05/2026</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <br>
+                                                                                    <h1 id="title1">Transição pelo Sistema de Pontos</h1>
+                                                                                    <br>
+                                                                                    <div class="card">
+                                                                                        <div id="timeContri">
+                                                                                            <h3>Tempo de Contribuição (Necessário 30 anos na data da Aposentadoria:</h3>
+                                                                                            <p>Possui 28 anos, 5 meses e 12 dias (Faltam 1 ano, 6 meses e 18 dias)</p>
+                                                                                        </div>
+                                                                                        <div id="rmiCard">
+                                                                                            <h3>Provável RMI:</h3>
+                                                                                            <p>R$ 4.367,75</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <br>
+                                                                                    <div class="card">
+                                                                                        <div id="timeContri">
+                                                                                            <h3>Idade (Necessario 30 anos na data da aposentadoria):</h3>
+                                                                                            <p>Possui Idade de 57 anos, 10 meses e 14 dias (Carência = 345)</p>
+                                                                                        </div>
+                                                                                        <div id="rmiCard">
+                                                                                            <h3>Possivel Aposentadoria:</h3>
+                                                                                            <p>02/10/2025</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <br>
+                                                                                </div>
+                                                                            </div>
+                                                                            <br>
+                                                                            <a class="btn btn-white btn-sm btnBackContri">Voltar</a>
+                                                                            <a class="btn btn-primary btn-sm btnProxResu">Proximo</a>
+                                                                        </form>
+                                                                    </div>
+
+
+                                                                    <!-- Resumo do Calculo -->
+                                                                    <div class="col-lg-12 tab-pane fade" id="calcResume" role="tabpanel">
+                                                                        <form name="form_calcResume" id="form_calcResume">
+                                                                            <input type="hidden" id="input_infoId" name="input_infoId">
+                                                                            <input type="hidden" id="input_airdromeId" name="input_airdromeId">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+
+                                                                                    <h1 id="title1">Tempo Adicional de 100%</h1>
+
+                                                                                    <body id="body">
+                                                                                        <div class="row" id="cards">
+                                                                                            <div class="card green" id="cardGreen2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Tempo de Contribuição</h3>
+                                                                                                    <h4>28 anos, 5 meses e 12 dias</h4>
+                                                                                                </div>
+
+
+                                                                                                <div id="myProgress">
+                                                                                                    <div id="myBarGreen2"></div>
+
+
+                                                                                                    <h3 id="h">Necessario: 30 anos</h3>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div class="card red" id="cardRed2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Carência</h3>
+                                                                                                    <h4>345 contribuições</h4>
+                                                                                                </div>
+
+                                                                                                <div id="myProgress">
+                                                                                                    <div id="myBarRed2"></div>
+
+
+                                                                                                    <h3 id="h">Necessario: 180 contribuições</h3>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div class="card blue" id="cardBlue2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Pontos</h3>
+                                                                                                    <h4>86 pontos</h4>
+                                                                                                </div>
+
+                                                                                                <div id="myProgress">
+                                                                                                    <div id="myBarBlue2"></div>
+
+                                                                                                    <h3 id="h">Necessario 88 pontos</h3>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="card blue" id="cardBlue2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Provável R.M.I</h3>
+
+                                                                                                </div>
+
+                                                                                                <div id="myProgress">
+
+                                                                                                    <div id="myBarRmi">R$ 4.470,45</div>
+                                                                                                    <h3 id="h"></h3>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                    </body>
+                                                                                    <h1 id="title1">Transição por Idade</h1>
+
+                                                                                    <body id="body">
+                                                                                        <div class="row" id="cards">
+                                                                                            <div class="card green" id="cardGreen2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Tempo de Contribuição</h3>
+                                                                                                    <h4>28 anos, 5 meses e 12 dias</h4>
+                                                                                                </div>
+
+
+                                                                                                <div id="myProgress">
+                                                                                                    <div id="myBarGreen2"></div>
+
+
+                                                                                                    <h3 id="h">Necessario: 30 anos</h3>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div class="card red" id="cardRed2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Carência</h3>
+                                                                                                    <h4>345 contribuições</h4>
+                                                                                                </div>
+
+                                                                                                <div id="myProgress">
+                                                                                                    <div id="myBarRed2"></div>
+
+
+                                                                                                    <h3 id="h">Necessario: 180 contribuições</h3>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div class="card blue" id="cardBlue2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Pontos</h3>
+                                                                                                    <h4>86 pontos</h4>
+                                                                                                </div>
+
+                                                                                                <div id="myProgress">
+                                                                                                    <div id="myBarBlue2"></div>
+
+                                                                                                    <h3 id="h">Necessario 88 pontos</h3>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="card blue" id="cardBlue2">
+                                                                                                <div id="h">
+                                                                                                    <h3>Provável R.M.I</h3>
+
+                                                                                                </div>
+
+                                                                                                <div id="myProgress">
+
+                                                                                                    <div id="myBarRmi">R$ 4.470,45</div>
+
+
+                                                                                                    <h3 id="h"></h3>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                    </body>
+
+                                                                                </div>
+                                                                                <br>
+                                                                                <div class="form-group">
+                                                                                    <div class="col-sm-4">
+                                                                                        <a class="btn btn-white btn-sm btnBackTrans">Voltar</a>
+                                                                                        <button class="btn btn-primary btn-sm btnSaveInfo">Salvar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                        </form>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- <div class="hr-line-dashed"></div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Qual calculo deseja
                                                                 Fazer?</label>
@@ -603,49 +1348,47 @@
 
                                                         </body>
 
-                                                </div>
+                                                        </div>
 
-                                                <div class="form-group">
+                                                        <div class="form-group">
 
 
                                                     </fieldset>
 
 
+                                                    </div>
+                                                    </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!--Footer-->
+                                    <%- include('../partials/footer') %>
+
                                 </div>
+
+                                <!--Right sidebar-->
+                                <%- include('../partials/right-sidebar') %>
+
                             </div>
-                        </div>
 
-                        <!--Footer-->
-                        <%- include('../partials/footer') %>
+                            <!--Right sidebar-->
+                            <%- include('../partials/mainly-scripts') %>
 
-                </div>
+                                <!-- FooTable -->
+                                <script src="/js/plugins/footable/footable.all.min.js"></script>
 
-                <!--Right sidebar-->
-                <%- include('../partials/right-sidebar') %>
+                                <!-- Select2 -->
+                                <script src="/js/plugins/select2/select2.full.min.js"></script>
 
-        </div>
+                                <!-- Datepicker -->
+                                <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-        <!--Right sidebar-->
-        <%- include('../partials/mainly-scripts') %>
+                                <!-- Steps -->
+                                <script src="/js/plugins/steps/jquery.steps.min.js"></script>
 
-            <!-- FooTable -->
-            <script src="/js/plugins/footable/footable.all.min.js"></script>
-
-            <!-- Select2 -->
-            <script src="/js/plugins/select2/select2.full.min.js"></script>
-
-            <!-- Datepicker -->
-            <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
-
-            <!-- Steps -->
-            <script src="/js/plugins/steps/jquery.steps.min.js"></script>
-
-            <!-- Plan Edit -->
-            <script src="/js/pages/calcEdit.js"></script>
     </body>
 
     </html>
