@@ -13,9 +13,23 @@ var calcEdit = (function() {
     var calcEdit = {};
 
     calcEdit.init = function() {
-        //global.listProject($('#ddlProject'));
         $('.dropify').dropify();
         $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
+        $('.footable').footable();
+        $("#wizard").steps({
+            bodyTag: "fieldset",
+            stepsOrientation: "vertical",
+            enableAllSteps: true,
+            labels: {
+                cancel: "Voltar",
+                current: "Step atual:",
+                pagination: "Paginação'",
+                finish: "Finalizar",
+                next: "Próximo",
+                previous: "Anterior",
+                loading: "Carregando..."
+            }
+        })
 
         calcEdit.auth();
         calcEdit.validateForm();
@@ -30,30 +44,40 @@ var calcEdit = (function() {
     };
 
     calcEdit.initEvents = function() {
+        console.log('initEvents')
         $('.btnSave').on('click', calcEdit.save);
         $('.btnCancel').on('click', calcEdit.cancel);
         $('.btnRegister').on('click', calcEdit.register)
         $('.btnNext').on('click', calcEdit.closeModal)
-        $('.btnDelete').on('click', calcEdit.delete)
+        $('.btnDeleteTempo').on('click', calcEdit.deleteTempo)
+        $('.btnDeleteSalario').on('click', calcEdit.deleteSalario)
         $('.btnEdit').on('click', calcEdit.edit)
 
+        console.log($('.btnDeleteTempo'))
 
-
-
-
-
-        calcEdit.setMask();
-
-
-
+        calcEdit.setMask()
     };
-
     calcEdit.setMask = function() {
 
     }
+    calcEdit.deleteTempo = function(event) {
+        event.preventDefault()
+        console.log('deleteTempo')
+            // let tr = document.querySelectorAll('tr');
+            // tr.forEach((e) => {
+            //     console.log('O ID é: ' + e.id);
 
-    calcEdit.delete = function(data) {
-        console.log('testadndoooo')
+        //     let idd = e.id
+        //     if (idd) {
+        //         idd.remove();
+        //     }
+
+
+        // })
+    }
+    calcEdit.deleteSalario = function(event) {
+        event.preventDefault()
+        console.log('deleteTempo')
             // let tr = document.querySelectorAll('tr');
             // tr.forEach((e) => {
             //     console.log('O ID é: ' + e.id);
@@ -249,11 +273,12 @@ var calcEdit = (function() {
             let rmiMiddle = "60% da media de todos os seus salarios + 2% a cada ano que ultrapassar 20 anos para os homens e 15 anos para as mulheres "
 
             // calculo antes da reforma 
+            let years = date.now - 'data de nascimento'
             const timeContri = dataFinal - dataInicial + 1
             let timeContri80 = timeContri / 100 * 80
             const salario = salario
-            let maioresSalarios = "80% dos maiores",
-                salario
+            let maioresSalarios = "80% dos maiores"
+                //salario
             let salarioBeneficio = timeContri80 / 240
             let sobrevida = 76.8
             let aliquota1 = salario / 100 * 8 //ate 1693,72
@@ -262,7 +287,44 @@ var calcEdit = (function() {
             let fatorPrevidenciario = timeContri * aliquota / sobrevida * [1 + (idadeContri + timeContri * aliquota) / 100]
 
 
-            let rmi = salarioBeneficio / 100 * 70
+            //let rmi = salarioBeneficio / 100 * 70
+
+            // time contribution bar
+            if (genero == Masculino && timeContri == carenciaMan && years == idadeMan) {
+
+            }
+            if (genero == Feminino && timeContri >= carenciaWoman && years == idadeWoman) {
+
+            }
+
+            if (calcContri < timeContri) {
+                div.style = "width: porcTime%;"
+                div.class = "progress-bar progress-bar-danger"
+            }
+            if (calcContri >= timeContri) {
+                div.style = "width: 100%;"
+                div.class = "progress-bar"
+            }
+            // carencia 
+            if (carenciaCount < carencia) {
+                div.style = "width: porcContriCarencia%;"
+                div.class = "progress-bar progress-bar-danger"
+            }
+            if (carenciaCount >= carencia) {
+                div.style = "width: 100%;"
+                div.class = "progress-bar"
+            }
+            // pontos 
+            if (pointCount < point) {
+                div.style = "width: porcePoint%;"
+                div.class = "progress-bar progress-bar-danger"
+            }
+            if (pointCount >= point) {
+                div.style = "width: 100%;"
+                div.class = "progress-bar"
+            }
+
+
 
 
         }

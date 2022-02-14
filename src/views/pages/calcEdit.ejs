@@ -44,10 +44,10 @@
 
                                                     <h1>Tipo de Cálculo</h1>
                                                     <fieldset>
-                                                        <div class="form-group row">
-                                                            <label class="col-sm-2 col-form-label">Qual calculo deseja
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Qual calculo deseja
                                                                 Fazer?</label>
-                                                            <div class="col-sm-10">
+                                                            <div>
                                                                 <select id="select_type" name="select_type" class="form-control">
                                                                     <option value="" disabled selected>Selecione um tipo
                                                                         de cálculo</option>
@@ -64,11 +64,10 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="hr-line-dashed"></div>
-                                                        <div class="form-group  row">
-                                                            <label class="col-sm-2 col-form-label">Qual a especio do
+                                                        <div class="form-group">
+                                                            <label>Qual a especio do
                                                                 benefício?</label>
-                                                            <div class="col-sm-10">
+                                                            <div>
                                                                 <select id="select_type" name="select_type" class="form-control">
                                                                     <option value="2" disabled selected>Benefícios
                                                                         Programáveis</option>
@@ -169,9 +168,9 @@
                                                                             <td>TRIBUNAL DE JUSTIÇA DO ESTADO MATO GROSSO</td>
                                                                             <td>PROMOTOR DE JUSTIÇA</td>
                                                                             <td>
-                                                                                <button href="#" class="btn btn-white fa fa-trash btn-sm btnDelete"> </button>
+                                                                                <a href="#" class="btn btn-white fa fa-trash btn-sm btnDeleteTempo"> </a>
                                                                                 <!-- <a href="#" class="btn btn-white fa fa-trash btn-sm btnDelete"> </a> -->
-                                                                                <a href="#" class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
+                                                                                <a class="btn btn-white fa fa-edit btn-sm btnEdit"> </a>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -647,34 +646,6 @@
 
             <!-- Plan Edit -->
             <script src="/js/pages/calcEdit.js"></script>
-
-            <!-- Page-Level Scripts -->
-            <script>
-                $(document).ready(function() {
-                    $('.btnDelete').on('click', calcEdit.delete)
-                    $('.dropify').dropify();
-                    $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
-                    $('.footable').footable();
-                    $("#wizard").steps({
-                        bodyTag: "fieldset",
-                        stepsOrientation: "vertical",
-                        enableAllSteps: true,
-                        labels: {
-                            cancel: "Voltar",
-                            current: "Step atual:",
-                            pagination: "Paginação'",
-                            finish: "Finalizar",
-                            next: "Próximo",
-                            previous: "Anterior",
-                            loading: "Carregando..."
-                        }
-                    });
-
-
-                    // $('.btnEdit').on('click', calcEdit.edit)
-
-                });
-            </script>
     </body>
 
     </html>
