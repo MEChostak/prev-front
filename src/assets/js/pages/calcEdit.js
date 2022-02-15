@@ -16,6 +16,7 @@ var calcEdit = (function() {
         $('.dropify').dropify();
         $('.dropify-message > p').html('Insira aqui a sua planilha (arrastando para o box ou clicando)<br/><br/> ATENCÃO! Use o Modelo');
         $('.footable').footable();
+
         $("#wizard").steps({
             bodyTag: "fieldset",
             stepsOrientation: "vertical",
@@ -31,7 +32,7 @@ var calcEdit = (function() {
             }
         })
 
-        calcEdit.auth();
+        //calcEdit.auth();
         calcEdit.validateForm();
 
         const queryString = window.location.search;
